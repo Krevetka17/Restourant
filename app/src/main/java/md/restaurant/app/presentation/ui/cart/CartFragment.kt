@@ -27,9 +27,8 @@ class CartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Новый адаптер — без именованных параметров
         adapter = CartAdapter(
-            items = CartManager.getCart(requireContext()),
+            items = CartManager.getCart(requireContext()).toMutableList(),  // ← toMutableList()!
             onQuantityChange = { id, qty ->
                 CartManager.updateQuantity(requireContext(), id, qty)
                 updateTotal()

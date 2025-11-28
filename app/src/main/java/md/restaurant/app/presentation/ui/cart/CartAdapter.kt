@@ -8,7 +8,7 @@ import md.restaurant.app.databinding.ItemCartBinding
 import md.restaurant.app.domain.model.CartItem
 
 class CartAdapter(
-    private var items: List<CartItem>,
+    private var items: MutableList<CartItem>,
     private val onQuantityChange: (String, Int) -> Unit,
     private val onRemove: (String) -> Unit
 ) : RecyclerView.Adapter<CartAdapter.ViewHolder>() {
@@ -32,29 +32,38 @@ class CartAdapter(
             btnMinus.setOnClickListener {
                 if (cartItem.quantity > 1) {
                     cartItem.quantity--
+                    etQuantity.setText(cartItem.quantity.toString())
                     onQuantityChange(item._id, cartItem.quantity)
-                    notifyItemChanged(position)
                 } else {
-                    onRemove(item._id)
+                    removeItem(position)
                 }
             }
 
             btnPlus.setOnClickListener {
                 cartItem.quantity++
+                etQuantity.setText(cartItem.quantity.toString())
                 onQuantityChange(item._id, cartItem.quantity)
-                notifyItemChanged(position)
             }
 
             btnRemove.setOnClickListener {
-                onRemove(item._id)
+                removeItem(position)
             }
         }
+    }
+
+    // ← МГНОВЕННОЕ УДАЛЕНИЕ!
+    private fun removeItem(position: Int) {
+        val itemId = items[position].menuItem._id
+        items.removeAt(position)
+        notifyItemRemoved(position)
+        notifyItemRangeChanged(position, items.size)
+        onRemove(itemId)
     }
 
     override fun getItemCount() = items.size
 
     fun updateItems(newItems: List<CartItem>) {
-        items = newItems
+        items = newItems.toMutableList()
         notifyDataSetChanged()
     }
 }
