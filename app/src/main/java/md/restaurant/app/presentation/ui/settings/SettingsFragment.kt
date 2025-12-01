@@ -1,7 +1,6 @@
 package md.restaurant.app.presentation.ui.settings
 
 import android.app.AlertDialog
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +15,9 @@ import md.restaurant.app.utils.LanguageManager
 class SettingsFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         val root = LinearLayout(requireContext()).apply {
             layoutParams = ViewGroup.LayoutParams(
@@ -28,21 +29,10 @@ class SettingsFragment : Fragment() {
             setPadding(64, 120, 64, 64)
         }
 
-        // Кнопка смены языка
+        // Единственная кнопка — смена языка
         MaterialButton(requireContext()).apply {
             text = getString(R.string.change_language)
             setOnClickListener { showLanguageDialog() }
-            root.addView(this)
-        }
-
-        // Кнопка стиля экрана
-        MaterialButton(requireContext()).apply {
-            text = getString(R.string.screen_style)
-            layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            ).apply { topMargin = 60 }
-            setOnClickListener { showScreenStyleDialog() }
             root.addView(this)
         }
 
@@ -61,34 +51,5 @@ class SettingsFragment : Fragment() {
             }
             .setNegativeButton(android.R.string.cancel, null)
             .show()
-    }
-
-    private fun showScreenStyleDialog() {
-        val options = arrayOf(
-            getString(R.string.full_screen),
-            getString(R.string.notch),
-            getString(R.string.default_style)
-        )
-
-        AlertDialog.Builder(requireContext())
-            .setTitle(R.string.screen_style)
-            .setItems(options) { _, which ->
-                val themeRes = when (which) {
-                    0 -> R.style.Theme_Restaurant_FullScreen
-                    1 -> R.style.Theme_Restaurant_Notch
-                    else -> R.style.Theme_Restaurant_Default
-                }
-                saveAndApplyTheme(themeRes)
-            }
-            .show()
-    }
-
-    private fun saveAndApplyTheme(themeRes: Int) {
-        requireContext().getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
-            .edit()
-            .putInt("screen_style", themeRes)
-            .apply()
-
-        requireActivity().recreate()
     }
 }
