@@ -1,0 +1,194 @@
+[
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_check_off.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_check_off.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/layout_fragment_profile_logged_in.xml.flat",
+        "source": "md.restaurant.app-main-55:/layout/fragment_profile_logged_in.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "md.restaurant.app-main-55:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_bg_profile_card.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/bg_profile_card.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_remove.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_remove.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_arrow_back_white.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_arrow_back_white.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/layout_activity_main.xml.flat",
+        "source": "md.restaurant.app-main-55:/layout/activity_main.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_card_gradient.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/card_gradient.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/layout_snackbar_custom.xml.flat",
+        "source": "md.restaurant.app-main-55:/layout/snackbar_custom.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "md.restaurant.app-main-55:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "md.restaurant.app-main-55:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/layout_fragment_home.xml.flat",
+        "source": "md.restaurant.app-main-55:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_settings.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/menu_bottom_nav_menu.xml.flat",
+        "source": "md.restaurant.app-main-55:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "md.restaurant.app-main-55:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/xml_data_extraction_rules.xml.flat",
+        "source": "md.restaurant.app-main-55:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_language.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_language.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_add_shopping_cart.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_add_shopping_cart.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_check_on.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_check_on.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/layout_fragment_register.xml.flat",
+        "source": "md.restaurant.app-main-55:/layout/fragment_register.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_bg_snackbar.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/bg_snackbar.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_rounded_quantity_bg.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/rounded_quantity_bg.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/navigation_nav_graph.xml.flat",
+        "source": "md.restaurant.app-main-55:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/layout_item_menu.xml.flat",
+        "source": "md.restaurant.app-main-55:/layout/item_menu.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/layout_fragment_login.xml.flat",
+        "source": "md.restaurant.app-main-55:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "md.restaurant.app-main-55:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/layout_fragment_cart.xml.flat",
+        "source": "md.restaurant.app-main-55:/layout/fragment_cart.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_add.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_add.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "md.restaurant.app-main-55:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/layout_item_cart.xml.flat",
+        "source": "md.restaurant.app-main-55:/layout/item_cart.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_photo_missing.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_photo_missing.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_home.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_home.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "md.restaurant.app-main-55:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/color_bottom_nav_item_color.xml.flat",
+        "source": "md.restaurant.app-main-55:/color/bottom_nav_item_color.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "md.restaurant.app-main-55:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_person_circle.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_person_circle.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "md.restaurant.app-main-55:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_cart.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_cart.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_person.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_person.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "md.restaurant.app-main-55:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "md.restaurant.app-main-55:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/layout_fragment_profile.xml.flat",
+        "source": "md.restaurant.app-main-55:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/xml_backup_rules.xml.flat",
+        "source": "md.restaurant.app-main-55:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_ic_launcher_background.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_food_placeholder.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/food_placeholder.xml"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "md.restaurant.app-main-55:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "md.restaurant.app-release-54:/drawable_card_background.xml.flat",
+        "source": "md.restaurant.app-main-55:/drawable/card_background.xml"
+    }
+]

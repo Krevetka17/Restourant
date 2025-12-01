@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-52:\\layout\\item_cart.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-55:\\layout\\item_cart.xml"
+    },
+    {
+        "merged": "md.restaurant.app-mergeDebugResources-52:/layout/fragment_profile.xml",
+        "source": "md.restaurant.app-main-55:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-52:\\layout\\fragment_cart.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-55:\\layout\\fragment_cart.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-52:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-55:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-52:\\layout\\item_menu.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-55:\\layout\\item_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-52:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-55:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-52:\\layout\\fragment_profile.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-55:\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-52:\\layout\\snackbar_custom.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-55:\\layout\\snackbar_custom.xml"
+    },
+    {
+        "merged": "md.restaurant.app-mergeDebugResources-52:/layout/activity_main.xml",
+        "source": "md.restaurant.app-main-55:/layout/activity_main.xml"
+    }
+]

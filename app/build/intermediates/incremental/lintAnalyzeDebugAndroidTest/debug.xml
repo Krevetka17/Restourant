@@ -1,0 +1,32 @@
+<variant
+    name="debug"
+    package="md.restaurant.app"
+    minSdkVersion="24"
+    targetSdkVersion="36"
+    debuggable="true"
+    mergedManifest="build\intermediates\merged_manifest\debug\processDebugMainManifest\AndroidManifest.xml"
+    resourceConfigurations="en,ru,ro"
+    partialResultsDir="build\intermediates\android_test_lint_partial_results\debug\lintAnalyzeDebugAndroidTest\out"
+    desugaredMethodsFiles="C:\Users\prost\.gradle\caches\8.13\transforms\a2ebc4aa8eb95aeb5ab072fa4916c9db\transformed\D8BackportedDesugaredMethods.txt">
+  <buildFeatures
+      viewBinding="true"
+      namespacing="REQUIRED"/>
+  <sourceProviders>
+  </sourceProviders>
+  <testSourceProviders>
+    <sourceProvider
+        manifests="src\androidTest\AndroidManifest.xml"
+        javaDirectories="src\androidTest\java;src\androidTestDebug\java;src\androidTest\kotlin;src\androidTestDebug\kotlin"
+        resDirectories="src\androidTest\res;src\androidTestDebug\res"
+        assetsDirectories="src\androidTest\assets;src\androidTestDebug\assets"
+        androidTest="true"/>
+  </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
+  <artifact
+      type="INSTRUMENTATION_TEST"
+      applicationId="md.restaurant.app.test"
+      generatedResourceFolders="build\generated\res\resValues\androidTest\debug"
+      desugaredMethodsFiles="C:\Users\prost\.gradle\caches\8.13\transforms\a2ebc4aa8eb95aeb5ab072fa4916c9db\transformed\D8BackportedDesugaredMethods.txt">
+  </artifact>
+</variant>
