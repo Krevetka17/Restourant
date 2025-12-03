@@ -1,103 +1,339 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@android:color/white"
     android:padding="24dp">
 
-    <!-- Когда НЕ вошёл -->
-    <LinearLayout
+    <!-- ==================== НЕ АВТОРИЗОВАН ==================== -->
+    <ScrollView
         android:id="@+id/group_logged_out"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Войти или зарегистрироваться"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_name"
+            android:orientation="vertical">
+
+            <!-- === БЛОК ВХОДА === -->
+            <LinearLayout
+                android:id="@+id/layout_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Имя (для регистрации)" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_email"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_title"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="32dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_email"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:passwordToggleEnabled="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="@string/enter"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="24dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no_account"
+                        android:textColor="#666666"/>
+                    <TextView
+                        android:id="@+id/tv_switch_to_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" @string/register"
+                        android:textColor="#6200EE"
+                        android:textStyle="bold"
+                        android:layout_marginStart="6dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- === БЛОК РЕГИСТРАЦИИ === -->
+            <LinearLayout
+                android:id="@+id/layout_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
-                android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:orientation="vertical"
+                android:visibility="gone">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Пароль"
-                android:inputType="textPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_title"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="32dp"/>
 
-        <Button
-            android:id="@+id/btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Войти"
-            android:layout_marginTop="16dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_name_reg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/name"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btn_register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Зарегистрироваться"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-    </LinearLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_login_reg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/login"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Когда ВОШЁЛ -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_email_reg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_phone_reg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/phone"
+                        android:inputType="phone"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:passwordToggleEnabled="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_password_reg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Полоски сложности пароля -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <View android:id="@+id/bar1" android:layout_width="0dp" android:layout_height="6dp" android:layout_weight="1" android:background="#DDDDDD" android:layout_marginEnd="4dp"/>
+                    <View android:id="@+id/bar2" android:layout_width="0dp" android:layout_height="6dp" android:layout_weight="1" android:background="#DDDDDD" android:layout_marginEnd="4dp"/>
+                    <View android:id="@+id/bar3" android:layout_width="0dp" android:layout_height="6dp" android:layout_weight="1" android:background="#DDDDDD" android:layout_marginEnd="4dp"/>
+                    <View android:id="@+id/bar4" android:layout_width="0dp" android:layout_height="6dp" android:layout_weight="1" android:background="#DDDDDD"/>
+                </LinearLayout>
+                <TextView android:id="@+id/tv_strength" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/password_strength" android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:passwordToggleEnabled="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_repeat_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/repeat_password"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btn_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="@string/register"
+                    android:layout_marginBottom="24dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/have_account"
+                        android:textColor="#666666"/>
+                    <TextView
+                        android:id="@+id/tv_switch_to_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" @string/enter"
+                        android:textColor="#6200EE"
+                        android:textStyle="bold"
+                        android:layout_marginStart="6dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ==================== АВТОРИЗОВАН ==================== -->
     <LinearLayout
         android:id="@+id/group_logged_in"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/tv_user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Имя"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:text="@string/profile_title"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
 
-        <TextView
-            android:id="@+id/tv_user_email"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="email@example.com"
-            android:layout_marginTop="8dp"
-            android:textSize="16sp" />
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_default_user"
+                android:background="@drawable/circle_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toTopOf="@id/iv_avatar"
+                app:layout_constraintStart_toEndOf="@id/iv_avatar"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_user_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_name"
+                app:layout_constraintStart_toEndOf="@id/iv_avatar"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btn_edit_profile"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/edit_profile"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btn_my_orders"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/my_orders"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btn_pending_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/pending_reviews"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btn_payment_data"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/payment_data"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btn_support"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/support"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone"
+            android:layout_marginBottom="24dp"/>
 
         <Button
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Выйти"
-            android:layout_marginTop="32dp"/>
+            android:layout_height="56dp"
+            android:text="@string/logout"/>
     </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,12 +8,6 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
-    @POST("auth/register")
-    suspend fun register(@Body request: AuthRequest): AuthResponse
-
-    @POST("auth/login")
-    suspend fun login(@Body request: AuthRequest): AuthResponse
-
     @GET("menu")
     suspend fun getMenu(): List<MenuItemDto>
 }

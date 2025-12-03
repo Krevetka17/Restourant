@@ -1,20 +1,13 @@
 <resources>
     <string name="app_name">Restaurant</string>
     <string name="currency_symbol">MDL</string>
-    <string name="login">Login</string>
-    <string name="register">Register</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="name">Name</string>
-    <string name="phone">Phone</string>
     <string name="menu">Menu</string>
     <string name="cart">Cart</string>
     <string name="orders">My Orders</string>
     <string name="booking">Table Booking</string>
     <string name="delivery">Delivery</string>
     <string name="profile">Profile</string>
-    <string name="logout">Logout</string>
     <string name="language">Language</string>
     <string name="choose_language">Choose language</string>
     <string name="english">English</string>
@@ -35,9 +28,7 @@
     <string name="drinks">Drinks</string>
     <string name="desserts">Desserts</string>
     <string name="login_to_account">Login to account</string>
-    <string name="no_account">No account?</string>
     <string name="register_now">Register now</string>
-    <string name="my_orders">My Orders</string>
     <string name="favorites">Favorites</string>
     <string name="view_history">View History</string>
     <string name="change_language">Change Language</string>
@@ -45,5 +36,30 @@
     <string name="full_screen">Full screen (under camera)</string>
     <string name="notch">Black bar at top</string>
     <string name="default_style">Default (white bar)</string>
+    <string name="profile_title">Your Profile</string>
+    <string name="login_title">Login</string>
+    <string name="register_title">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="login">Login</string>
+    <string name="phone">Phone number</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="enter">Sign In</string>
+    <string name="register">Sign Up</string>
+    <string name="no_account">Not registered yet?</string>
+    <string name="have_account">Already have an account?</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="my_orders">My orders/booking</string>
+    <string name="pending_reviews">Pending reviews</string>
+    <string name="payment_data">Payment details</string>
+    <string name="support">Support</string>
+    <string name="logout">Logout</string>
+    <string name="password_strength">Password strength</string>
+    <string name="password_too_weak">Too weak</string>
+    <string name="password_weak">Weak</string>
+    <string name="password_medium">Medium</string>
+    <string name="password_strong">Strong</string>
+    <string name="password_very_strong">Very strong</string>
 
 </resources>

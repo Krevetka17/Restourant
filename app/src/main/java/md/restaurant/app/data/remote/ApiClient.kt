@@ -1,3 +1,4 @@
+// Файл: data/remote/ApiClient.kt — верни как было!
 package md.restaurant.app.data.remote
 
 import md.restaurant.app.utils.AuthManager
@@ -7,8 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
-    private const val BASE_URL = "http://10.0.2.2:5001/"  // для эмулятора
-    // Для реального телефона: http://192.168.1.XXX:5000/api/
+    private const val BASE_URL = "http://10.0.2.2:5001/"
 
     private val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
