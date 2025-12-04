@@ -1,0 +1,10 @@
+<!-- res/drawable/ic_notifications_badge.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:width="12dp" android:height="12dp" android:gravity="end|top">
+        <shape android:shape="oval">
+            <solid android:color="#D32F2F"/>
+            <stroke android:width="2dp" android:color="#FFFFFF"/>
+            <size android:width="12dp" android:height="12dp"/>
+        </shape>
+    </item>
+</layer-list>

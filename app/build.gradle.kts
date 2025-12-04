@@ -71,6 +71,8 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.53")
     kapt("com.google.dagger:hilt-android-compiler:2.53")
 
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

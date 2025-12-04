@@ -4,176 +4,30 @@ package md.restaurant.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
+import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
-import androidx.viewbinding.ViewBindings;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
-import java.lang.String;
 import md.restaurant.app.R;
 
 public final class FragmentProfileBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final FrameLayout rootView;
 
   @NonNull
-  public final View bar1;
+  public final FrameLayout profileContainer;
 
-  @NonNull
-  public final View bar2;
-
-  @NonNull
-  public final View bar3;
-
-  @NonNull
-  public final View bar4;
-
-  @NonNull
-  public final Button btnEditProfile;
-
-  @NonNull
-  public final Button btnLogin;
-
-  @NonNull
-  public final Button btnLogout;
-
-  @NonNull
-  public final Button btnMyOrders;
-
-  @NonNull
-  public final Button btnPaymentData;
-
-  @NonNull
-  public final Button btnPendingReviews;
-
-  @NonNull
-  public final Button btnRegister;
-
-  @NonNull
-  public final Button btnSupport;
-
-  @NonNull
-  public final TextInputEditText etEmail;
-
-  @NonNull
-  public final TextInputEditText etEmailReg;
-
-  @NonNull
-  public final TextInputEditText etLoginReg;
-
-  @NonNull
-  public final TextInputEditText etNameReg;
-
-  @NonNull
-  public final TextInputEditText etPassword;
-
-  @NonNull
-  public final TextInputEditText etPasswordReg;
-
-  @NonNull
-  public final TextInputEditText etPhoneReg;
-
-  @NonNull
-  public final TextInputEditText etRepeatPassword;
-
-  @NonNull
-  public final LinearLayout groupLoggedIn;
-
-  @NonNull
-  public final ScrollView groupLoggedOut;
-
-  @NonNull
-  public final ImageView ivAvatar;
-
-  @NonNull
-  public final LinearLayout layoutLogin;
-
-  @NonNull
-  public final LinearLayout layoutRegister;
-
-  @NonNull
-  public final TextInputLayout tilEmail;
-
-  @NonNull
-  public final TextInputLayout tilPassword;
-
-  @NonNull
-  public final TextView tvStrength;
-
-  @NonNull
-  public final TextView tvSwitchToLogin;
-
-  @NonNull
-  public final TextView tvSwitchToRegister;
-
-  @NonNull
-  public final TextView tvUserEmail;
-
-  @NonNull
-  public final TextView tvUserName;
-
-  private FragmentProfileBinding(@NonNull ConstraintLayout rootView, @NonNull View bar1,
-      @NonNull View bar2, @NonNull View bar3, @NonNull View bar4, @NonNull Button btnEditProfile,
-      @NonNull Button btnLogin, @NonNull Button btnLogout, @NonNull Button btnMyOrders,
-      @NonNull Button btnPaymentData, @NonNull Button btnPendingReviews,
-      @NonNull Button btnRegister, @NonNull Button btnSupport, @NonNull TextInputEditText etEmail,
-      @NonNull TextInputEditText etEmailReg, @NonNull TextInputEditText etLoginReg,
-      @NonNull TextInputEditText etNameReg, @NonNull TextInputEditText etPassword,
-      @NonNull TextInputEditText etPasswordReg, @NonNull TextInputEditText etPhoneReg,
-      @NonNull TextInputEditText etRepeatPassword, @NonNull LinearLayout groupLoggedIn,
-      @NonNull ScrollView groupLoggedOut, @NonNull ImageView ivAvatar,
-      @NonNull LinearLayout layoutLogin, @NonNull LinearLayout layoutRegister,
-      @NonNull TextInputLayout tilEmail, @NonNull TextInputLayout tilPassword,
-      @NonNull TextView tvStrength, @NonNull TextView tvSwitchToLogin,
-      @NonNull TextView tvSwitchToRegister, @NonNull TextView tvUserEmail,
-      @NonNull TextView tvUserName) {
+  private FragmentProfileBinding(@NonNull FrameLayout rootView,
+      @NonNull FrameLayout profileContainer) {
     this.rootView = rootView;
-    this.bar1 = bar1;
-    this.bar2 = bar2;
-    this.bar3 = bar3;
-    this.bar4 = bar4;
-    this.btnEditProfile = btnEditProfile;
-    this.btnLogin = btnLogin;
-    this.btnLogout = btnLogout;
-    this.btnMyOrders = btnMyOrders;
-    this.btnPaymentData = btnPaymentData;
-    this.btnPendingReviews = btnPendingReviews;
-    this.btnRegister = btnRegister;
-    this.btnSupport = btnSupport;
-    this.etEmail = etEmail;
-    this.etEmailReg = etEmailReg;
-    this.etLoginReg = etLoginReg;
-    this.etNameReg = etNameReg;
-    this.etPassword = etPassword;
-    this.etPasswordReg = etPasswordReg;
-    this.etPhoneReg = etPhoneReg;
-    this.etRepeatPassword = etRepeatPassword;
-    this.groupLoggedIn = groupLoggedIn;
-    this.groupLoggedOut = groupLoggedOut;
-    this.ivAvatar = ivAvatar;
-    this.layoutLogin = layoutLogin;
-    this.layoutRegister = layoutRegister;
-    this.tilEmail = tilEmail;
-    this.tilPassword = tilPassword;
-    this.tvStrength = tvStrength;
-    this.tvSwitchToLogin = tvSwitchToLogin;
-    this.tvSwitchToRegister = tvSwitchToRegister;
-    this.tvUserEmail = tvUserEmail;
-    this.tvUserName = tvUserName;
+    this.profileContainer = profileContainer;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public FrameLayout getRoot() {
     return rootView;
   }
 
@@ -194,210 +48,12 @@ public final class FragmentProfileBinding implements ViewBinding {
 
   @NonNull
   public static FragmentProfileBinding bind(@NonNull View rootView) {
-    // The body of this method is generated in a way you would not otherwise write.
-    // This is done to optimize the compiled bytecode for size and performance.
-    int id;
-    missingId: {
-      id = R.id.bar1;
-      View bar1 = ViewBindings.findChildViewById(rootView, id);
-      if (bar1 == null) {
-        break missingId;
-      }
-
-      id = R.id.bar2;
-      View bar2 = ViewBindings.findChildViewById(rootView, id);
-      if (bar2 == null) {
-        break missingId;
-      }
-
-      id = R.id.bar3;
-      View bar3 = ViewBindings.findChildViewById(rootView, id);
-      if (bar3 == null) {
-        break missingId;
-      }
-
-      id = R.id.bar4;
-      View bar4 = ViewBindings.findChildViewById(rootView, id);
-      if (bar4 == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_edit_profile;
-      Button btnEditProfile = ViewBindings.findChildViewById(rootView, id);
-      if (btnEditProfile == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_login;
-      Button btnLogin = ViewBindings.findChildViewById(rootView, id);
-      if (btnLogin == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_logout;
-      Button btnLogout = ViewBindings.findChildViewById(rootView, id);
-      if (btnLogout == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_my_orders;
-      Button btnMyOrders = ViewBindings.findChildViewById(rootView, id);
-      if (btnMyOrders == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_payment_data;
-      Button btnPaymentData = ViewBindings.findChildViewById(rootView, id);
-      if (btnPaymentData == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_pending_reviews;
-      Button btnPendingReviews = ViewBindings.findChildViewById(rootView, id);
-      if (btnPendingReviews == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_register;
-      Button btnRegister = ViewBindings.findChildViewById(rootView, id);
-      if (btnRegister == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_support;
-      Button btnSupport = ViewBindings.findChildViewById(rootView, id);
-      if (btnSupport == null) {
-        break missingId;
-      }
-
-      id = R.id.et_email;
-      TextInputEditText etEmail = ViewBindings.findChildViewById(rootView, id);
-      if (etEmail == null) {
-        break missingId;
-      }
-
-      id = R.id.et_email_reg;
-      TextInputEditText etEmailReg = ViewBindings.findChildViewById(rootView, id);
-      if (etEmailReg == null) {
-        break missingId;
-      }
-
-      id = R.id.et_login_reg;
-      TextInputEditText etLoginReg = ViewBindings.findChildViewById(rootView, id);
-      if (etLoginReg == null) {
-        break missingId;
-      }
-
-      id = R.id.et_name_reg;
-      TextInputEditText etNameReg = ViewBindings.findChildViewById(rootView, id);
-      if (etNameReg == null) {
-        break missingId;
-      }
-
-      id = R.id.et_password;
-      TextInputEditText etPassword = ViewBindings.findChildViewById(rootView, id);
-      if (etPassword == null) {
-        break missingId;
-      }
-
-      id = R.id.et_password_reg;
-      TextInputEditText etPasswordReg = ViewBindings.findChildViewById(rootView, id);
-      if (etPasswordReg == null) {
-        break missingId;
-      }
-
-      id = R.id.et_phone_reg;
-      TextInputEditText etPhoneReg = ViewBindings.findChildViewById(rootView, id);
-      if (etPhoneReg == null) {
-        break missingId;
-      }
-
-      id = R.id.et_repeat_password;
-      TextInputEditText etRepeatPassword = ViewBindings.findChildViewById(rootView, id);
-      if (etRepeatPassword == null) {
-        break missingId;
-      }
-
-      id = R.id.group_logged_in;
-      LinearLayout groupLoggedIn = ViewBindings.findChildViewById(rootView, id);
-      if (groupLoggedIn == null) {
-        break missingId;
-      }
-
-      id = R.id.group_logged_out;
-      ScrollView groupLoggedOut = ViewBindings.findChildViewById(rootView, id);
-      if (groupLoggedOut == null) {
-        break missingId;
-      }
-
-      id = R.id.iv_avatar;
-      ImageView ivAvatar = ViewBindings.findChildViewById(rootView, id);
-      if (ivAvatar == null) {
-        break missingId;
-      }
-
-      id = R.id.layout_login;
-      LinearLayout layoutLogin = ViewBindings.findChildViewById(rootView, id);
-      if (layoutLogin == null) {
-        break missingId;
-      }
-
-      id = R.id.layout_register;
-      LinearLayout layoutRegister = ViewBindings.findChildViewById(rootView, id);
-      if (layoutRegister == null) {
-        break missingId;
-      }
-
-      id = R.id.til_email;
-      TextInputLayout tilEmail = ViewBindings.findChildViewById(rootView, id);
-      if (tilEmail == null) {
-        break missingId;
-      }
-
-      id = R.id.til_password;
-      TextInputLayout tilPassword = ViewBindings.findChildViewById(rootView, id);
-      if (tilPassword == null) {
-        break missingId;
-      }
-
-      id = R.id.tv_strength;
-      TextView tvStrength = ViewBindings.findChildViewById(rootView, id);
-      if (tvStrength == null) {
-        break missingId;
-      }
-
-      id = R.id.tv_switch_to_login;
-      TextView tvSwitchToLogin = ViewBindings.findChildViewById(rootView, id);
-      if (tvSwitchToLogin == null) {
-        break missingId;
-      }
-
-      id = R.id.tv_switch_to_register;
-      TextView tvSwitchToRegister = ViewBindings.findChildViewById(rootView, id);
-      if (tvSwitchToRegister == null) {
-        break missingId;
-      }
-
-      id = R.id.tv_user_email;
-      TextView tvUserEmail = ViewBindings.findChildViewById(rootView, id);
-      if (tvUserEmail == null) {
-        break missingId;
-      }
-
-      id = R.id.tv_user_name;
-      TextView tvUserName = ViewBindings.findChildViewById(rootView, id);
-      if (tvUserName == null) {
-        break missingId;
-      }
-
-      return new FragmentProfileBinding((ConstraintLayout) rootView, bar1, bar2, bar3, bar4,
-          btnEditProfile, btnLogin, btnLogout, btnMyOrders, btnPaymentData, btnPendingReviews,
-          btnRegister, btnSupport, etEmail, etEmailReg, etLoginReg, etNameReg, etPassword,
-          etPasswordReg, etPhoneReg, etRepeatPassword, groupLoggedIn, groupLoggedOut, ivAvatar,
-          layoutLogin, layoutRegister, tilEmail, tilPassword, tvStrength, tvSwitchToLogin,
-          tvSwitchToRegister, tvUserEmail, tvUserName);
+    if (rootView == null) {
+      throw new NullPointerException("rootView");
     }
-    String missingId = rootView.getResources().getResourceName(id);
-    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
+
+    FrameLayout profileContainer = (FrameLayout) rootView;
+
+    return new FragmentProfileBinding((FrameLayout) rootView, profileContainer);
   }
 }

@@ -9,6 +9,12 @@ class RestaurantApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
         LanguageManager.attach(this)
+    }
+
+    companion object {
+        lateinit var instance: RestaurantApp
+            private set
     }
 }

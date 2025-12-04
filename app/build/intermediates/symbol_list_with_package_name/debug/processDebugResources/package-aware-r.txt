@@ -1151,6 +1151,7 @@ attr suffixText
 attr suffixTextAppearance
 attr suffixTextColor
 attr suggestionRowLayout
+attr swipeRefreshLayoutProgressSpinnerBackgroundColor
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -3044,6 +3045,7 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable card_background
 drawable card_gradient
 drawable circle_gray
+drawable circle_white
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3059,9 +3061,12 @@ drawable ic_call_answer_video
 drawable ic_call_answer_video_low
 drawable ic_call_decline
 drawable ic_call_decline_low
+drawable ic_camera
 drawable ic_cart
+drawable ic_check_circle
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_copy
 drawable ic_default_user
 drawable ic_home
 drawable ic_keyboard_black_24dp
@@ -3075,6 +3080,10 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_notification_badge
+drawable ic_notification_unread
+drawable ic_notifications
+drawable ic_notifications_with_badge
 drawable ic_person
 drawable ic_photo_missing
 drawable ic_remove
@@ -3139,6 +3148,8 @@ drawable mtrl_switch_thumb_unchecked_pressed
 drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
+drawable nav_profile_selector
+drawable nav_profile_with_badge
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -3245,10 +3256,6 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
-id bar1
-id bar2
-id bar3
-id bar4
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3262,18 +3269,27 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btn_add_to_cart
+id btn_admin_panel
+id btn_approve
+id btn_back
+id btn_cancel
 id btn_checkout
+id btn_copy_id
 id btn_edit_profile
 id btn_login
 id btn_logout
+id btn_mark_as_read
 id btn_minus
 id btn_my_orders
+id btn_notifications
 id btn_payment_data
 id btn_pending_reviews
 id btn_plus
 id btn_register
+id btn_reject
 id btn_remove
-id btn_support
+id btn_requests
+id btn_save
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3281,6 +3297,7 @@ id cancel_button
 id carryVelocity
 id cartFragment
 id category_container
+id cb_confirm
 id center
 id centerCrop
 id centerInside
@@ -3360,12 +3377,10 @@ id enterAlways
 id enterAlwaysCollapsed
 id escape
 id et_email
-id et_email_reg
-id et_login_reg
-id et_name_reg
+id et_login
+id et_name
 id et_password
-id et_password_reg
-id et_phone_reg
+id et_phone
 id et_quantity
 id et_repeat_password
 id exitUntilCollapsed
@@ -3395,8 +3410,6 @@ id gone
 id graph
 id graph_wrap
 id group_divider
-id group_logged_in
-id group_logged_out
 id grouping
 id groups
 id header_title
@@ -3428,9 +3441,7 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
-id layout_login
 id layout_quantity
-id layout_register
 id left
 id leftToRight
 id legacy
@@ -3562,11 +3573,14 @@ id position
 id postLayout
 id pressed
 id profileFragment
+id profile_container
 id progress_circular
 id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recycler_notifications
+id recycler_requests
 id report_drawn
 id reverseSawtooth
 id right
@@ -3643,7 +3657,9 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id swipe_refresh
 id tabMode
+id tab_layout
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -3674,13 +3690,12 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
-id til_email
-id til_password
 id time
 id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toolbar
 id top
 id topPanel
 id touch_outside
@@ -3695,15 +3710,23 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_category
+id tv_date
 id tv_description
+id tv_empty
+id tv_message
 id tv_name
+id tv_new
+id tv_old
 id tv_price
 id tv_quantity
-id tv_strength
 id tv_switch_to_login
 id tv_switch_to_register
+id tv_title
 id tv_total
+id tv_user
 id tv_user_email
+id tv_user_id
 id tv_user_name
 id unchecked
 id uniform
@@ -3712,6 +3735,7 @@ id up
 id useLogo
 id vertical_only
 id view_offset_helper
+id view_pager
 id view_transition
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
@@ -3860,13 +3884,23 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_admin_panel
+layout fragment_admin_requests
 layout fragment_cart
+layout fragment_edit_profile
 layout fragment_home
+layout fragment_login
+layout fragment_main_profile
+layout fragment_notification_list
+layout fragment_notifications
 layout fragment_profile
+layout fragment_register
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_admin_request
 layout item_cart
 layout item_menu
+layout item_notification
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -5441,6 +5475,7 @@ styleable State android_id constraints
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
 styleable StateSet defaultState
+styleable SwipeRefreshLayout swipeRefreshLayoutProgressSpinnerBackgroundColor
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable SwitchMaterial useMaterialThemeColors
 styleable TabItem android_icon android_layout android_text

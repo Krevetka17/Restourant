@@ -507,7 +507,7 @@ public final class DaggerRestaurantApp_HiltComponents_SingletonC {
     }
 
     @Override
-    public void injectRestaurantApp(RestaurantApp restaurantApp) {
+    public void injectRestaurantApp(RestaurantApp arg0) {
     }
   }
 }

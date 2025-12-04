@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.Restaurant" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">#FFBB86FC</item>
+        
+        <item name="colorPrimary">#FF6200EE</item>
         <item name="colorPrimaryVariant">#FF3700B3</item>
-        <item name="colorOnPrimary">@android:color/black</item>
+        <item name="colorOnPrimary">@android:color/white</item>
         <item name="colorSecondary">#FF03DAC6</item>
-        <item name="colorSecondaryVariant">#FF03DAC6</item>
+        <item name="colorSecondaryVariant">#FF018786</item>
         <item name="colorOnSecondary">@android:color/black</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-    </style>
-    <style name="Theme.Restaurant.Default" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor">@android:color/white</item>
-        <item name="android:windowLightStatusBar">true</item>
-    </style>
-    <style name="Theme.Restaurant.FullScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">false</item>
+
+        
         <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:fitsSystemWindows">false</item>
-    </style>
-    <style name="Theme.Restaurant.Notch" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor">#000000</item>
-        <item name="android:windowLightStatusBar">true</item>
         <item name="android:fitsSystemWindows">true</item>
     </style>
 </resources>

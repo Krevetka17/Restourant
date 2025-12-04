@@ -17,47 +17,11 @@
         android:label="@string/cart"
         tools:layout="@layout/fragment_cart" />
 
-    <!-- Экран входа -->
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="md.restaurant.app.presentation.ui.auth.LoginFragment"
-        android:label="Вход"
-        tools:layout="@layout/fragment_login">
-        <action
-            android:id="@+id/action_login_to_register"
-            app:destination="@id/registerFragment" />
-        <action
-            android:id="@+id/action_login_to_profile"
-            app:destination="@id/profileFragment"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
-    </fragment>
-
-    <!-- Экран регистрации -->
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="md.restaurant.app.presentation.ui.auth.RegisterFragment"
-        android:label="Регистрация"
-        tools:layout="@layout/fragment_register">
-        <action
-            android:id="@+id/action_register_to_profile"
-            app:destination="@id/profileFragment"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
-    </fragment>
-
-    <!-- Профиль -->
     <fragment
         android:id="@+id/profileFragment"
         android:name="md.restaurant.app.presentation.ui.profile.ProfileFragment"
-        android:label="Профиль"
-        tools:layout="@layout/fragment_profile_logged_in">
-        <action
-            android:id="@+id/action_profile_to_login"
-            app:destination="@id/loginFragment"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
-    </fragment>
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/settingsFragment"

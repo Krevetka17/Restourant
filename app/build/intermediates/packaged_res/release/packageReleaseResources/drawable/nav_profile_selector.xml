@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/nav_profile_with_badge" android:state_checked="true"/>
+    <item android:drawable="@drawable/nav_profile_with_badge" android:state_checked="false"/>
+    <!-- Позже сделаем умную логику: показывать бейдж только если есть непрочитанные -->
+</selector>
