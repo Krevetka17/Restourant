@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.os.Build
 import android.os.Bundle
 import android.util.Base64
 import android.view.LayoutInflater
@@ -30,24 +31,31 @@ class EditProfileFragment : Fragment() {
     private var _binding: FragmentEditProfileBinding? = null
     private val binding get() = _binding!!
 
+    // Временное фото — НЕ сохраняем в SharedPreferences!
+    private var tempAvatarBase64: String? = null
+
     private val pickImage = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
         uri?.let {
-            val bitmap = BitmapFactory.decodeStream(requireContext().contentResolver.openInputStream(it))
+            val inputStream = requireContext().contentResolver.openInputStream(it)
+            val bitmap = BitmapFactory.decodeStream(inputStream)
             binding.ivAvatar.setImageBitmap(bitmap)
-            val base64 = bitmapToBase64(bitmap)
-            AuthManager.saveAvatarBase64(requireContext(), base64)
+            tempAvatarBase64 = bitmapToBase64(bitmap)
         }
     }
 
     private val requestPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
-        if (granted) pickImage.launch("image/*")
+        if (granted) {
+            pickImage.launch("image/*")
+        } else {
+            Toast.makeText(requireContext(), "Разрешение отклонено", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentEditProfileBinding.inflate(inflater, container, false)
-        return binding.root
+        return binding.root  // ← ЭТА СТРОЧКА ОБЯЗАТЕЛЬНА!
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -59,46 +67,40 @@ class EditProfileFragment : Fragment() {
         binding.etEmail.setText(user.email)
         binding.etPhone.setText(user.phone ?: "")
 
-        // Загружаем аватарку
-        AuthManager.getAvatarBase64(requireContext())?.let { base64 ->
-            binding.ivAvatar.setImageBitmap(base64ToBitmap(base64))
+        // Текущая аватарка из SharedPreferences
+        AuthManager.getAvatarBase64(requireContext())?.let {
+            binding.ivAvatar.setImageBitmap(base64ToBitmap(it))
         }
 
-        // Клик по аватарке
         binding.ivAvatar.setOnClickListener {
-            when {
-                ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED -> {
-                    pickImage.launch("image/*")
-                }
-                else -> requestPermission.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
-            }
+            openGallery()
         }
 
-        // ОДИН РАЗ — отправка запроса
         binding.btnSave.setOnClickListener {
             if (!binding.cbConfirm.isChecked) {
                 Toast.makeText(requireContext(), "Подтвердите изменения", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val user = AuthManager.getUser(requireContext())!!
+            val currentAvatarBase64 = AuthManager.getAvatarBase64(requireContext()) ?: ""
 
             val oldData = mapOf(
                 "name" to user.name,
                 "email" to user.email,
-                "phone" to user.phone
+                "phone" to user.phone,
+                "avatar" to currentAvatarBase64
             )
 
             val newName = binding.etName.text.toString().trim()
             val newEmail = binding.etEmail.text.toString().trim()
             val newPhone = binding.etPhone.text.toString().trim()
-            val avatarBase64 = AuthManager.getAvatarBase64(requireContext()) ?: ""
+            val avatarToSend = tempAvatarBase64 ?: AuthManager.getAvatarBase64(requireContext()) ?: ""
 
             val newData = mapOf(
                 "name" to newName,
                 "email" to newEmail,
                 "phone" to newPhone,
-                "avatar" to avatarBase64
+                "avatar" to avatarToSend
             )
 
             CoroutineScope(Dispatchers.Main).launch {
@@ -117,7 +119,7 @@ class EditProfileFragment : Fragment() {
                                 )
                             )
                     }
-                    Toast.makeText(requireContext(), "Запрос успешно отправлен!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Запрос отправлен! Ожидайте одобрения", Toast.LENGTH_LONG).show()
                     parentFragmentManager.popBackStack()
                 } catch (e: Exception) {
                     Toast.makeText(requireContext(), "Ошибка: ${e.message}", Toast.LENGTH_LONG).show()
@@ -127,6 +129,23 @@ class EditProfileFragment : Fragment() {
 
         binding.btnCancel.setOnClickListener {
             parentFragmentManager.popBackStack()
+        }
+    }
+
+    private fun openGallery() {
+        val permission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            Manifest.permission.READ_MEDIA_IMAGES
+        } else {
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        }
+
+        when {
+            ContextCompat.checkSelfPermission(requireContext(), permission) == PackageManager.PERMISSION_GRANTED -> {
+                pickImage.launch("image/*")
+            }
+            else -> {
+                requestPermission.launch(permission)
+            }
         }
     }
 
@@ -144,5 +163,6 @@ class EditProfileFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        tempAvatarBase64 = null
     }
 }

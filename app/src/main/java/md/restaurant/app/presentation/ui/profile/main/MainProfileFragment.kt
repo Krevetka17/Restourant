@@ -105,19 +105,12 @@ class MainProfileFragment : Fragment() {
 
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                // Получаем свежие данные с сервера
                 val freshUser = withContext(Dispatchers.IO) {
                     AuthApiClient.api.getCurrentUser()
                 }
 
-                // Сохраняем их в SharedPreferences
-                AuthManager.saveAuth(
-                    requireContext(),
-                    AuthManager.getToken(requireContext())!!,
-                    freshUser
-                )
+                AuthManager.saveAuth(requireContext(), AuthManager.getToken(requireContext())!!, freshUser)
 
-                // Обновляем UI
                 updateUserInfo()
                 badgeViewModel.checkUnreadNotifications()
 

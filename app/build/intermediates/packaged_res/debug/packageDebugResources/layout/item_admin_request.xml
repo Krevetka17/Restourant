@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="6dp"
-    app:cardBackgroundColor="@android:color/white">
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,22 +14,95 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Имя пользователя -->
         <TextView
             android:id="@+id/tv_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Пользователь"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="#1A1A1A"
             tools:text="Иван Иванов"/>
 
+        <!-- Сравнение аватарок: слева старая, справа новая -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center">
+
+            <!-- Старая аватарка -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Сейчас"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="8dp"/>
+
+                <ImageView
+                    android:id="@+id/iv_old_avatar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/circle_gray"
+                    android:src="@drawable/ic_default_user"
+                    android:contentDescription="Старая аватарка"/>
+            </LinearLayout>
+
+            <!-- Стрелка → -->
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_arrow_right"
+                android:layout_marginHorizontal="16dp"
+                android:tint="#6200EE"/>
+
+            <!-- Новая аватарка -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Будет"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="8dp"/>
+
+                <ImageView
+                    android:id="@+id/iv_new_avatar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/circle_gray"
+                    android:src="@drawable/ic_default_user"
+                    android:visibility="gone"
+                    android:contentDescription="Новая аватарка"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Текстовые данные -->
         <TextView
             android:id="@+id/tv_old"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:textColor="#666666"
-            tools:text="Старое: Иван, ivan@example.com"/>
+            android:textSize="14sp"
+            tools:text="Старое: Иван Иванов, ivan@example.com"/>
 
         <TextView
             android:id="@+id/tv_new"
@@ -39,6 +111,7 @@
             android:layout_marginTop="4dp"
             android:textStyle="bold"
             android:textColor="#1976D2"
+            android:textSize="15sp"
             tools:text="Новое: Иван Петров, ivan.petrov@gmail.com"/>
 
         <TextView
@@ -48,8 +121,9 @@
             android:layout_marginTop="8dp"
             android:textColor="#999999"
             android:textSize="12sp"
-            tools:text="12 марта 2025, 14:32"/>
+            tools:text="12 марта 2025"/>
 
+        <!-- Кнопки -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,20 +132,23 @@
 
             <Button
                 android:id="@+id/btn_approve"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="Принять"
+                android:backgroundTint="#4CAF50"
+                android:textColor="@android:color/white"
                 android:layout_marginEnd="8dp"/>
 
             <Button
                 android:id="@+id/btn_reject"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="Отклонить"
-                android:textColor="#CCCCCC"/>
+                android:textColor="#000000"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

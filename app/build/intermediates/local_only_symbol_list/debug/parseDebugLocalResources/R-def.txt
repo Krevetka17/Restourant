@@ -9,6 +9,7 @@ drawable circle_white
 drawable food_placeholder
 drawable ic_add
 drawable ic_add_shopping_cart
+drawable ic_arrow_right
 drawable ic_camera
 drawable ic_cart
 drawable ic_check_circle
@@ -65,6 +66,8 @@ id et_repeat_password
 id homeFragment
 id iv_avatar
 id iv_food
+id iv_new_avatar
+id iv_old_avatar
 id layout_quantity
 id nav_graph
 id nav_host_fragment

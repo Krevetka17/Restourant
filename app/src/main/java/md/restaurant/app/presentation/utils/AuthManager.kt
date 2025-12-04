@@ -4,6 +4,7 @@ import android.content.Context
 import com.google.gson.Gson
 import md.restaurant.app.data.remote.dto.UserDto
 
+
 object AuthManager {
     private const val PREF_NAME = "auth_prefs"
     private const val KEY_TOKEN = "jwt_token"
@@ -14,10 +15,12 @@ object AuthManager {
 
     // Сохранение токена и пользователя
     fun saveAuth(context: Context, token: String, user: UserDto) {
-        prefs(context).edit()
-            .putString(KEY_TOKEN, token)
-            .putString(KEY_USER, Gson().toJson(user))
-            .apply()
+        prefs(context).edit().apply {
+            putString(KEY_TOKEN, token)
+            putString(KEY_USER, Gson().toJson(user))
+            user.avatar?.let { putString(KEY_AVATAR, it) }
+            apply()
+        }
     }
 
     fun getToken(context: Context? = null): String? =

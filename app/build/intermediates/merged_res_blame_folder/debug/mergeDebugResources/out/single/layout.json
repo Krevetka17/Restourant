@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-53:\\layout\\fragment_profile.xml",
-        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-56:\\layout\\fragment_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-53:\\layout\\item_menu.xml",
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-56:\\layout\\item_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-53:\\layout\\fragment_profile.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-56:\\layout\\fragment_profile.xml"
     },
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-53:\\layout\\fragment_register.xml",
@@ -32,12 +32,12 @@
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-56:\\layout\\item_cart.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-53:/layout/fragment_main_profile.xml",
-        "source": "md.restaurant.app-main-56:/layout/fragment_main_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-53:\\layout\\item_admin_request.xml",
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-56:\\layout\\item_admin_request.xml"
+    },
+    {
+        "merged": "md.restaurant.app-mergeDebugResources-53:/layout/item_admin_request.xml",
+        "source": "md.restaurant.app-main-56:/layout/item_admin_request.xml"
     },
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-53:\\layout\\fragment_edit_profile.xml",

@@ -3055,6 +3055,7 @@ drawable food_placeholder
 drawable ic_add
 drawable ic_add_shopping_cart
 drawable ic_arrow_back_black_24
+drawable ic_arrow_right
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -3437,6 +3438,8 @@ id italic
 id item_touch_helper_previous_elevation
 id iv_avatar
 id iv_food
+id iv_new_avatar
+id iv_old_avatar
 id jumpToEnd
 id jumpToStart
 id labeled

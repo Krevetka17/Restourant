@@ -7,41 +7,22 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import md.restaurant.app.MainActivity
 import md.restaurant.app.data.remote.AuthApiClient
-import md.restaurant.app.data.remote.AuthApiService
 import md.restaurant.app.databinding.FragmentNotificationListBinding
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class NotificationListFragment : Fragment() {
 
     private var _binding: FragmentNotificationListBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding!!  // Безопасно только внутри onViewCreated / onDestroyView
+
     private val adapter = NotificationAdapter { notificationId ->
         markNotificationAsRead(notificationId)
     }
 
-    private fun markNotificationAsRead(id: String) {
-        CoroutineScope(Dispatchers.Main).launch {
-            try {
-                val response = withContext(Dispatchers.IO) {
-                    AuthApiClient.api.markAsRead(id)
-                }
-                if (response.isSuccessful) {
-                    loadNotifications(arguments?.getBoolean("unread") ?: true)
-                    // Обновляем бейдж в MainActivity и в профиле
-                    (requireActivity() as? MainActivity)?.refreshNotificationBadge()
-                }
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }
-    }
+    // Жизненный цикл корутины привязан к фрагменту
+    private val fragmentScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
 
     companion object {
         fun newInstance(unread: Boolean) = NotificationListFragment().apply {
@@ -68,13 +49,15 @@ class NotificationListFragment : Fragment() {
     }
 
     private fun loadNotifications(unreadOnly: Boolean) {
-        CoroutineScope(Dispatchers.Main).launch {
+        // Проверяем, что binding ещё живой
+        val currentBinding = _binding ?: return
+
+        fragmentScope.launch {
             try {
                 val notifications = withContext(Dispatchers.IO) {
                     AuthApiClient.api.getNotifications()
                 }
 
-                // Логируем для дебага
                 println("Уведомления получено: ${notifications.size}")
 
                 val filtered = if (unreadOnly) {
@@ -83,20 +66,23 @@ class NotificationListFragment : Fragment() {
                     notifications.filter { it.isRead }
                 }
 
+                // Проверяем снова — вдруг фрагмент уже уничтожен
+                if (_binding == null) return@launch
+
                 if (filtered.isEmpty()) {
-                    binding.tvEmpty.isVisible = true
-                    binding.recyclerNotifications.isVisible = false
+                    currentBinding.tvEmpty.isVisible = true
+                    currentBinding.recyclerNotifications.isVisible = false
                 } else {
-                    binding.tvEmpty.isVisible = false
-                    binding.recyclerNotifications.isVisible = true
+                    currentBinding.tvEmpty.isVisible = false
+                    currentBinding.recyclerNotifications.isVisible = true
 
                     val list = filtered.map {
                         NotificationItem(
-                            id = it.id,
+                            id = it.id ?: "",
                             title = it.title,
                             message = it.message,
-                            category = it.category,
-                            date = it.createdAt.split("T")[0],
+                            category = it.category ?: "Система",
+                            date = it.createdAt.split("T").getOrNull(0) ?: "",
                             isRead = it.isRead
                         )
                     }
@@ -104,15 +90,33 @@ class NotificationListFragment : Fragment() {
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
-                binding.tvEmpty.text = "Ошибка загрузки: ${e.message}"
-                binding.tvEmpty.isVisible = true
+                if (_binding != null) {
+                    currentBinding.tvEmpty.text = "Ошибка загрузки: ${e.message}"
+                    currentBinding.tvEmpty.isVisible = true
+                }
             }
         }
     }
 
+    private fun markNotificationAsRead(id: String) {
+        fragmentScope.launch {
+            try {
+                val response = withContext(Dispatchers.IO) {
+                    AuthApiClient.api.markAsRead(id)
+                }
+                if (response.isSuccessful) {
+                    loadNotifications(arguments?.getBoolean("unread") ?: true)
+                    (requireActivity() as? MainActivity)?.refreshNotificationBadge()
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        fragmentScope.cancel()  // Отменяем все корутины
     }
 }

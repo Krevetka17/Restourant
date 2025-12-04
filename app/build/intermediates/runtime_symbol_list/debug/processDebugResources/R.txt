@@ -3054,6 +3054,7 @@ int drawable food_placeholder 0x7f07008c
 int drawable ic_add 0x7f07008d
 int drawable ic_add_shopping_cart 0x7f07008e
 int drawable ic_arrow_back_black_24 0x7f07008f
+int drawable ic_arrow_right 0x7f070101
 int drawable ic_call_answer 0x7f070090
 int drawable ic_call_answer_low 0x7f070091
 int drawable ic_call_answer_video 0x7f070092
@@ -3436,6 +3437,8 @@ int id italic 0x7f080109
 int id item_touch_helper_previous_elevation 0x7f08010a
 int id iv_avatar 0x7f08010b
 int id iv_food 0x7f08010c
+int id iv_new_avatar 0x7f080248
+int id iv_old_avatar 0x7f080249
 int id jumpToEnd 0x7f08010d
 int id jumpToStart 0x7f08010e
 int id labeled 0x7f08010f

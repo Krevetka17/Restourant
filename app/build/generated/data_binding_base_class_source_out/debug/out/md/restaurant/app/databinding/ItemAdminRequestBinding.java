@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,6 +28,12 @@ public final class ItemAdminRequestBinding implements ViewBinding {
   public final Button btnReject;
 
   @NonNull
+  public final ImageView ivNewAvatar;
+
+  @NonNull
+  public final ImageView ivOldAvatar;
+
+  @NonNull
   public final TextView tvDate;
 
   @NonNull
@@ -39,11 +46,14 @@ public final class ItemAdminRequestBinding implements ViewBinding {
   public final TextView tvUser;
 
   private ItemAdminRequestBinding(@NonNull CardView rootView, @NonNull Button btnApprove,
-      @NonNull Button btnReject, @NonNull TextView tvDate, @NonNull TextView tvNew,
-      @NonNull TextView tvOld, @NonNull TextView tvUser) {
+      @NonNull Button btnReject, @NonNull ImageView ivNewAvatar, @NonNull ImageView ivOldAvatar,
+      @NonNull TextView tvDate, @NonNull TextView tvNew, @NonNull TextView tvOld,
+      @NonNull TextView tvUser) {
     this.rootView = rootView;
     this.btnApprove = btnApprove;
     this.btnReject = btnReject;
+    this.ivNewAvatar = ivNewAvatar;
+    this.ivOldAvatar = ivOldAvatar;
     this.tvDate = tvDate;
     this.tvNew = tvNew;
     this.tvOld = tvOld;
@@ -89,6 +99,18 @@ public final class ItemAdminRequestBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.iv_new_avatar;
+      ImageView ivNewAvatar = ViewBindings.findChildViewById(rootView, id);
+      if (ivNewAvatar == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_old_avatar;
+      ImageView ivOldAvatar = ViewBindings.findChildViewById(rootView, id);
+      if (ivOldAvatar == null) {
+        break missingId;
+      }
+
       id = R.id.tv_date;
       TextView tvDate = ViewBindings.findChildViewById(rootView, id);
       if (tvDate == null) {
@@ -113,8 +135,8 @@ public final class ItemAdminRequestBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemAdminRequestBinding((CardView) rootView, btnApprove, btnReject, tvDate, tvNew,
-          tvOld, tvUser);
+      return new ItemAdminRequestBinding((CardView) rootView, btnApprove, btnReject, ivNewAvatar,
+          ivOldAvatar, tvDate, tvNew, tvOld, tvUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
