@@ -1,7 +1,11 @@
 R_DEF: Internal format may change without notice
 local
 dimen snackbar_height_small
+drawable bg_input_message
 drawable bg_snackbar
+drawable bg_support_bubble
+drawable bg_ticket_item
+drawable bg_user_bubble
 drawable card_background
 drawable card_gradient
 drawable circle_gray
@@ -9,6 +13,7 @@ drawable circle_white
 drawable food_placeholder
 drawable ic_add
 drawable ic_add_shopping_cart
+drawable ic_arrow_back
 drawable ic_arrow_right
 drawable ic_camera
 drawable ic_cart
@@ -26,7 +31,10 @@ drawable ic_notifications_with_badge
 drawable ic_person
 drawable ic_photo_missing
 drawable ic_remove
+drawable ic_send
 drawable ic_settings
+drawable ic_support_avatar
+drawable ic_underline_blue
 drawable nav_profile_selector
 drawable nav_profile_with_badge
 drawable rounded_quantity_bg
@@ -36,6 +44,8 @@ id btn_admin_panel
 id btn_approve
 id btn_back
 id btn_cancel
+id btn_change_language
+id btn_chat_history
 id btn_checkout
 id btn_copy_id
 id btn_edit_profile
@@ -53,11 +63,15 @@ id btn_reject
 id btn_remove
 id btn_requests
 id btn_save
+id btn_send
+id btn_support
 id cartFragment
 id category_container
 id cb_confirm
+id chat_container
 id et_email
 id et_login
+id et_message
 id et_name
 id et_password
 id et_phone
@@ -76,9 +90,12 @@ id profile_container
 id recycler_notifications
 id recycler_requests
 id rv_cart
+id rv_history
 id rv_menu
 id settingsFragment
+id settings_container
 id snackbar_text
+id specific_chat_container
 id status_bar_spacer
 id swipe_refresh
 id tab_layout
@@ -91,6 +108,7 @@ id tv_message
 id tv_name
 id tv_new
 id tv_old
+id tv_preview
 id tv_price
 id tv_quantity
 id tv_switch_to_login
@@ -114,10 +132,17 @@ layout fragment_notification_list
 layout fragment_notifications
 layout fragment_profile
 layout fragment_register
+layout fragment_settings
+layout fragment_settings_container
+layout fragment_support_chat
+layout fragment_support_history
+layout fragment_support_specific_chat
 layout item_admin_request
 layout item_cart
+layout item_history_ticket
 layout item_menu
 layout item_notification
+layout item_support_message
 layout snackbar_custom
 menu bottom_nav_menu
 mipmap ic_launcher
