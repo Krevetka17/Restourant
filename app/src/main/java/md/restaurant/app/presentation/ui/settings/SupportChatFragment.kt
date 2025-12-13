@@ -10,7 +10,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import md.restaurant.app.R
 import md.restaurant.app.data.remote.SupportApiClient
-import md.restaurant.app.data.remote.dto.SupportMessageDto
 import md.restaurant.app.utils.AuthManager
 import md.restaurant.app.RestaurantApp
 import kotlinx.coroutines.CoroutineScope
@@ -23,6 +22,7 @@ import android.util.Base64
 class SupportChatFragment : Fragment() {
 
     private lateinit var chatContainer: LinearLayout
+    private var currentTicketId: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +33,6 @@ class SupportChatFragment : Fragment() {
 
         chatContainer = view.findViewById(R.id.chat_container)
 
-        // Всегда показываем приветствие при обычном входе
         addSupportMessage("Здравствуйте! Чем можем помочь?")
 
         view.findViewById<View>(R.id.btn_back).setOnClickListener {
@@ -98,12 +97,20 @@ class SupportChatFragment : Fragment() {
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                SupportApiClient.api.sendMessage(
+                val response = SupportApiClient.api.sendMessage(
                     mapOf(
                         "message" to message,
-                        "userId" to userId
+                        "userId" to userId,
+                        "ticketId" to currentTicketId
                     )
                 )
+                // Сервер возвращает ticketId
+                if (response is Map<*, *>) {
+                    val newTicketId = response["ticketId"] as? String
+                    if (newTicketId != null && currentTicketId == null) {
+                        currentTicketId = newTicketId
+                    }
+                }
             } catch (e: Exception) {
                 e.printStackTrace()
             }

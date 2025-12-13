@@ -6,10 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
@@ -28,19 +26,14 @@ public final class FragmentAdminPanelBinding implements ViewBinding {
   public final Button btnRequests;
 
   @NonNull
-  public final RecyclerView recyclerRequests;
-
-  @NonNull
-  public final TextView tvEmpty;
+  public final Button btnSupportTickets;
 
   private FragmentAdminPanelBinding(@NonNull LinearLayout rootView, @NonNull Button btnBack,
-      @NonNull Button btnRequests, @NonNull RecyclerView recyclerRequests,
-      @NonNull TextView tvEmpty) {
+      @NonNull Button btnRequests, @NonNull Button btnSupportTickets) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnRequests = btnRequests;
-    this.recyclerRequests = recyclerRequests;
-    this.tvEmpty = tvEmpty;
+    this.btnSupportTickets = btnSupportTickets;
   }
 
   @Override
@@ -82,20 +75,14 @@ public final class FragmentAdminPanelBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.recycler_requests;
-      RecyclerView recyclerRequests = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerRequests == null) {
-        break missingId;
-      }
-
-      id = R.id.tv_empty;
-      TextView tvEmpty = ViewBindings.findChildViewById(rootView, id);
-      if (tvEmpty == null) {
+      id = R.id.btn_support_tickets;
+      Button btnSupportTickets = ViewBindings.findChildViewById(rootView, id);
+      if (btnSupportTickets == null) {
         break missingId;
       }
 
       return new FragmentAdminPanelBinding((LinearLayout) rootView, btnBack, btnRequests,
-          recyclerRequests, tvEmpty);
+          btnSupportTickets);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

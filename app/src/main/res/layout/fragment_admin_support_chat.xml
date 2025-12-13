@@ -5,13 +5,13 @@
     android:orientation="vertical"
     android:background="@android:color/white">
 
-    <!-- Toolbar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:padding="16dp">
+
 
         <ImageButton
             android:id="@+id/btn_back"
@@ -22,17 +22,14 @@
             android:contentDescription="Назад" />
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Чат с поддержкой"
+            android:text="Чат с пользователем"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginStart="16dp" />
-
     </LinearLayout>
 
-    <!-- Основная область чата -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -40,20 +37,21 @@
         android:padding="16dp">
 
         <LinearLayout
-            android:id="@+id/specific_chat_container"
+            android:id="@+id/chat_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />
 
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Поле ввода -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
         android:background="#F5F5F5">
+
+
 
         <EditText
             android:id="@+id/et_message"
@@ -71,7 +69,6 @@
             android:layout_height="48dp"
             android:src="@drawable/ic_send"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Отправить"
             android:layout_marginStart="8dp" />
     </LinearLayout>
 </LinearLayout>

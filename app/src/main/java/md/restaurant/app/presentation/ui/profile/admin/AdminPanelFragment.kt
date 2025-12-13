@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import md.restaurant.app.R
 import md.restaurant.app.databinding.FragmentAdminPanelBinding
+import md.restaurant.app.presentation.ui.settings.AdminSupportTicketsFragment
 
 class AdminPanelFragment : Fragment() {
 
@@ -27,6 +28,13 @@ class AdminPanelFragment : Fragment() {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.profile_container, AdminRequestsListFragment())
                 .addToBackStack("requests_list")
+                .commit()
+        }
+
+        binding.btnSupportTickets.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.profile_container, AdminSupportTicketsFragment())
+                .addToBackStack("support_tickets")
                 .commit()
         }
 

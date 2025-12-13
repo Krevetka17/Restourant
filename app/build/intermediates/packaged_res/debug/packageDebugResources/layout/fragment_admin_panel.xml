@@ -25,26 +25,19 @@
         android:layout_marginBottom="16dp"/>
 
     <Button
+        android:id="@+id/btn_support_tickets"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Служба поддержки (тикеты)"
+        android:backgroundTint="#1976D2"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
         android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Назад"
         android:layout_marginTop="32dp"/>
 
-    <TextView
-        android:id="@+id/tv_empty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Выберите раздел"
-        android:textColor="#666666"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"/>
-
-    <!-- Сюда будет подгружаться список запросов -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_requests"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
-        android:visibility="gone"/>
 </LinearLayout>

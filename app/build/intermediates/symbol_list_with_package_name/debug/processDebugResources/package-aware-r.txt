@@ -3303,6 +3303,7 @@ id btn_requests
 id btn_save
 id btn_send
 id btn_support
+id btn_support_tickets
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3454,6 +3455,7 @@ id iv_avatar
 id iv_food
 id iv_new_avatar
 id iv_old_avatar
+id iv_user_avatar
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3610,6 +3612,7 @@ id rtl
 id rv_cart
 id rv_history
 id rv_menu
+id rv_tickets
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3907,6 +3910,8 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_admin_panel
 layout fragment_admin_requests
+layout fragment_admin_support_chat
+layout fragment_admin_support_tickets
 layout fragment_cart
 layout fragment_edit_profile
 layout fragment_home
@@ -3924,6 +3929,8 @@ layout fragment_support_specific_chat
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_admin_request
+layout item_admin_support_message
+layout item_admin_ticket
 layout item_cart
 layout item_history_ticket
 layout item_menu
