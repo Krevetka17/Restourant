@@ -18,6 +18,7 @@ MERGED from [androidx.navigation:navigation-ui-ktx:2.7.7] C:\Users\prost\.gradle
 MERGED from [androidx.navigation:navigation-ui:2.7.7] C:\Users\prost\.gradle\caches\8.13\transforms\50641935deed4d504a433d00a86ce21f\transformed\navigation-ui-2.7.7\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\prost\.gradle\caches\8.13\transforms\e12d8060a1f18f5edadf2bce581ce4c3\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\prost\.gradle\caches\8.13\transforms\5447a4287b228f73866fd62a6c90d072\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [com.wdullaer:materialdatetimepicker:4.2.3] C:\Users\prost\.gradle\caches\8.13\transforms\c720236ca890bf67948db906c55e0917\transformed\materialdatetimepicker-4.2.3\AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\prost\.gradle\caches\8.13\transforms\597352dbb1914a49bbb6d52843885016\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\prost\.gradle\caches\8.13\transforms\775ef8ac8f1ceea0e7bb16284ff79d20\transformed\appcompat-1.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\prost\.gradle\caches\8.13\transforms\7987fbec250a21b145da853ca2f5d7b0\transformed\glide-4.16.0\AndroidManifest.xml:2:1-9:12
@@ -119,6 +120,8 @@ MERGED from [com.google.android.material:material:1.12.0] C:\Users\prost\.gradle
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\prost\.gradle\caches\8.13\transforms\e12d8060a1f18f5edadf2bce581ce4c3\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\prost\.gradle\caches\8.13\transforms\5447a4287b228f73866fd62a6c90d072\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\prost\.gradle\caches\8.13\transforms\5447a4287b228f73866fd62a6c90d072\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [com.wdullaer:materialdatetimepicker:4.2.3] C:\Users\prost\.gradle\caches\8.13\transforms\c720236ca890bf67948db906c55e0917\transformed\materialdatetimepicker-4.2.3\AndroidManifest.xml:28:5-20
+MERGED from [com.wdullaer:materialdatetimepicker:4.2.3] C:\Users\prost\.gradle\caches\8.13\transforms\c720236ca890bf67948db906c55e0917\transformed\materialdatetimepicker-4.2.3\AndroidManifest.xml:28:5-20
 MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\prost\.gradle\caches\8.13\transforms\802f9af92944518ffaa054e07dc6076a\transformed\play-services-maps-19.0.0\AndroidManifest.xml:36:5-42:19
 MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\prost\.gradle\caches\8.13\transforms\802f9af92944518ffaa054e07dc6076a\transformed\play-services-maps-19.0.0\AndroidManifest.xml:36:5-42:19
 MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\prost\.gradle\caches\8.13\transforms\7c8e326dcdb02deda594f2d029fd1270\transformed\play-services-location-21.3.0\AndroidManifest.xml:6:5-20
@@ -221,6 +224,8 @@ MERGED from [com.google.android.material:material:1.12.0] C:\Users\prost\.gradle
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\prost\.gradle\caches\8.13\transforms\e12d8060a1f18f5edadf2bce581ce4c3\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\prost\.gradle\caches\8.13\transforms\5447a4287b228f73866fd62a6c90d072\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\prost\.gradle\caches\8.13\transforms\5447a4287b228f73866fd62a6c90d072\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.wdullaer:materialdatetimepicker:4.2.3] C:\Users\prost\.gradle\caches\8.13\transforms\c720236ca890bf67948db906c55e0917\transformed\materialdatetimepicker-4.2.3\AndroidManifest.xml:22:5-24:41
+MERGED from [com.wdullaer:materialdatetimepicker:4.2.3] C:\Users\prost\.gradle\caches\8.13\transforms\c720236ca890bf67948db906c55e0917\transformed\materialdatetimepicker-4.2.3\AndroidManifest.xml:22:5-24:41
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\prost\.gradle\caches\8.13\transforms\597352dbb1914a49bbb6d52843885016\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\prost\.gradle\caches\8.13\transforms\597352dbb1914a49bbb6d52843885016\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\prost\.gradle\caches\8.13\transforms\775ef8ac8f1ceea0e7bb16284ff79d20\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
@@ -349,6 +354,10 @@ MERGED from [com.google.dagger:dagger-lint-aar:2.53] C:\Users\prost\.gradle\cach
 		INJECTED from D:\AndStudioProject\Restaurant\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from D:\AndStudioProject\Restaurant\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.VIBRATE
+ADDED from [com.wdullaer:materialdatetimepicker:4.2.3] C:\Users\prost\.gradle\caches\8.13\transforms\c720236ca890bf67948db906c55e0917\transformed\materialdatetimepicker-4.2.3\AndroidManifest.xml:26:5-66
+	android:name
+		ADDED from [com.wdullaer:materialdatetimepicker:4.2.3] C:\Users\prost\.gradle\caches\8.13\transforms\c720236ca890bf67948db906c55e0917\transformed\materialdatetimepicker-4.2.3\AndroidManifest.xml:26:22-63
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\prost\.gradle\caches\8.13\transforms\802f9af92944518ffaa054e07dc6076a\transformed\play-services-maps-19.0.0\AndroidManifest.xml:23:5-79
 	android:name

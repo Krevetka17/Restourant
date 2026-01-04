@@ -101,6 +101,12 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
   public final Toolbar toolbarPayment;
 
   @NonNull
+  public final TextView tvDatePickup;
+
+  @NonNull
+  public final TextView tvDateReserve;
+
+  @NonNull
   public final TextView tvTotal;
 
   private FragmentOrderPaymentBinding(@NonNull LinearLayout rootView, @NonNull ImageButton btnBack,
@@ -115,7 +121,8 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
       @NonNull Spinner spinnerEndTime, @NonNull Spinner spinnerStartTime,
       @NonNull Spinner spinnerTime, @NonNull TextInputLayout tilAddress,
       @NonNull TextInputLayout tilName, @NonNull TextInputLayout tilPhone,
-      @NonNull Toolbar toolbarPayment, @NonNull TextView tvTotal) {
+      @NonNull Toolbar toolbarPayment, @NonNull TextView tvDatePickup,
+      @NonNull TextView tvDateReserve, @NonNull TextView tvTotal) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnConfirmOrder = btnConfirmOrder;
@@ -141,6 +148,8 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
     this.tilName = tilName;
     this.tilPhone = tilPhone;
     this.toolbarPayment = toolbarPayment;
+    this.tvDatePickup = tvDatePickup;
+    this.tvDateReserve = tvDateReserve;
     this.tvTotal = tvTotal;
   }
 
@@ -315,6 +324,18 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_date_pickup;
+      TextView tvDatePickup = ViewBindings.findChildViewById(rootView, id);
+      if (tvDatePickup == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_date_reserve;
+      TextView tvDateReserve = ViewBindings.findChildViewById(rootView, id);
+      if (tvDateReserve == null) {
+        break missingId;
+      }
+
       id = R.id.tv_total;
       TextView tvTotal = ViewBindings.findChildViewById(rootView, id);
       if (tvTotal == null) {
@@ -324,7 +345,8 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
       return new FragmentOrderPaymentBinding((LinearLayout) rootView, btnBack, btnConfirmOrder,
           etAddress, etName, etPhone, llDelivery, llPayment, llPickup, llReserve, radioGroupPayment,
           radioGroupType, rbCard, rbCash, rbDelivery, rbPickup, rbReserve, rvTables, spinnerEndTime,
-          spinnerStartTime, spinnerTime, tilAddress, tilName, tilPhone, toolbarPayment, tvTotal);
+          spinnerStartTime, spinnerTime, tilAddress, tilName, tilPhone, toolbarPayment,
+          tvDatePickup, tvDateReserve, tvTotal);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

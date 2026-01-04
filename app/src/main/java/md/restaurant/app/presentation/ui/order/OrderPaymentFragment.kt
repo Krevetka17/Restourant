@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -23,6 +24,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.snackbar.Snackbar
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import md.restaurant.app.R
@@ -33,10 +35,11 @@ import md.restaurant.app.data.remote.dto.CreateOrderRequest
 import md.restaurant.app.data.remote.order.OrderApiClient
 import md.restaurant.app.presentation.ui.cart.CartFragment
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
-class OrderPaymentFragment : Fragment(), OnMapReadyCallback {
+class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.OnDateSetListener {
 
     private var _binding: FragmentOrderPaymentBinding? = null
     private val binding get() = _binding!!
@@ -50,10 +53,19 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var timeList: List<String>
 
-    private val locationPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestPermission()
-    ) { granted ->
-        if (granted) enableMyLocation()
+    private var selectedDate: String? = null // yyyy-MM-dd
+    private var selectedDateDisplay: String = ""
+
+    private lateinit var locationPermissionLauncher: ActivityResultLauncher<String>
+
+    private val dayOfWeekFormat = SimpleDateFormat("EEE", Locale("ru"))
+    private val dayMonthFormat = SimpleDateFormat("dd MMMM", Locale("ru"))
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        locationPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+            if (granted) enableMyLocation()
+        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -67,8 +79,19 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback {
         val context = requireContext()
         binding.tvTotal.text = "Итого: ${CartManager.getTotal(context)} MDL"
 
+        val todayCal = Calendar.getInstance()
+        if (todayCal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+            todayCal.add(Calendar.DAY_OF_MONTH, 1)
+        }
+        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        selectedDate = sdf.format(todayCal.time)
+        selectedDateDisplay = formatDisplayDate(todayCal)
+
+        updateDateText()
+
         setupTypeToggle()
         setupTimeSpinners()
+        setupDatePicker()
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -87,6 +110,73 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback {
                 if (query.isNotEmpty() && orderType == "delivery") searchLocationOnMap(query)
             }
         })
+    }
+
+    private fun formatDisplayDate(cal: Calendar): String {
+        val dayOfWeek = dayOfWeekFormat.format(cal.time).capitalize()
+        val dayMonth = dayMonthFormat.format(cal.time)
+        return "$dayOfWeek $dayMonth"
+    }
+
+    private fun updateDateText() {
+        binding.tvDatePickup.text = selectedDateDisplay
+        binding.tvDateReserve.text = selectedDateDisplay
+    }
+
+    private fun setupDatePicker() {
+        binding.tvDatePickup.setOnClickListener { showMaterialDatePicker() }
+        binding.tvDateReserve.setOnClickListener { showMaterialDatePicker() }
+    }
+
+    private fun showMaterialDatePicker() {
+        val todayCal = Calendar.getInstance()
+        if (todayCal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+            todayCal.add(Calendar.DAY_OF_MONTH, 1)
+        }
+
+        val maxCal = Calendar.getInstance()
+        maxCal.add(Calendar.DAY_OF_MONTH, 7)
+
+        val dpd = DatePickerDialog.newInstance(
+            this,
+            todayCal.get(Calendar.YEAR),
+            todayCal.get(Calendar.MONTH),
+            todayCal.get(Calendar.DAY_OF_MONTH)
+        )
+
+        dpd.minDate = todayCal
+        dpd.maxDate = maxCal
+
+        // Создаём список всех воскресений в диапазоне и отключаем их
+        val disabledDays = mutableListOf<Calendar>()
+        val loopCal = todayCal.clone() as Calendar
+        while (loopCal <= maxCal) {
+            if (loopCal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+                disabledDays.add(loopCal.clone() as Calendar)
+            }
+            loopCal.add(Calendar.DAY_OF_MONTH, 1)
+        }
+
+        dpd.disabledDays = disabledDays.toTypedArray()
+
+        dpd.show(parentFragmentManager, "Datepickerdialog")
+    }
+
+    override fun onDateSet(view: DatePickerDialog?, year: Int, monthOfYear: Int, dayOfMonth: Int) {
+        val selectedCal = Calendar.getInstance()
+        selectedCal.set(year, monthOfYear, dayOfMonth)
+
+        val apiSdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        selectedDate = apiSdf.format(selectedCal.time)
+        selectedDateDisplay = formatDisplayDate(selectedCal)
+
+        updateDateText()
+
+        selectedStartTime = null
+        selectedEndTime = null
+        selectedTable = null
+        availableTables = emptyList()
+        setupTablesRecycler(emptyList())
     }
 
     private fun setupTimeSpinners() {
@@ -116,7 +206,9 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback {
                 selectedStartTime = timeList[position]
                 updateEndTimeSpinner(position)
                 selectedEndTime = null
-                if (selectedEndTime != null) loadAvailableTables(selectedStartTime!!, selectedEndTime!!)
+                if (selectedEndTime != null && selectedDate != null) {
+                    loadAvailableTables(selectedStartTime!!, selectedEndTime!!)
+                }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
@@ -124,7 +216,9 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback {
         binding.spinnerEndTime.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 selectedEndTime = (binding.spinnerEndTime.adapter.getItem(position) as String)
-                if (selectedStartTime != null) loadAvailableTables(selectedStartTime!!, selectedEndTime!!)
+                if (selectedStartTime != null && selectedDate != null) {
+                    loadAvailableTables(selectedStartTime!!, selectedEndTime!!)
+                }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
@@ -150,11 +244,11 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun loadAvailableTables(startTime: String, endTime: String) {
-        val today = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+        val date = selectedDate ?: return
 
         lifecycleScope.launch {
             try {
-                val response = OrderApiClient.api.getAvailableTablesInterval(today, startTime, endTime)
+                val response = OrderApiClient.api.getAvailableTablesInterval(date, startTime, endTime)
                 availableTables = response.available
                 setupTablesRecycler(availableTables)
                 if (availableTables.isEmpty()) {
@@ -322,8 +416,6 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback {
             )
         }
 
-        val today = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
-
         val finalEndTime = if (orderType == "reserve" && selectedEndTime != null) add30Minutes(selectedEndTime!!) else selectedEndTime
 
         val request = CreateOrderRequest(
@@ -332,7 +424,7 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback {
             delivery = orderType == "delivery",
             address = if (orderType == "delivery") binding.etAddress.text.toString().trim() else null,
             tableNumber = if (orderType == "reserve") selectedTable else null,
-            reservationDate = if (orderType != "delivery") today else null,
+            reservationDate = if (orderType != "delivery") selectedDate else null,
             startTime = if (orderType != "delivery") selectedStartTime else null,
             endTime = if (orderType != "delivery") finalEndTime else null
         )
@@ -359,7 +451,6 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback {
     }
 }
 
-// TableAdapter остаётся тем же
 class TableAdapter(
     private val tables: List<Int>,
     private val onClick: (Int) -> Unit

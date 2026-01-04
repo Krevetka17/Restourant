@@ -72,6 +72,7 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.53")
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation("com.wdullaer:materialdatetimepicker:4.2.3")
 
     // Google Maps
     implementation("com.google.android.gms:play-services-maps:19.0.0")

@@ -128,6 +128,8 @@ id toolbar
 id toolbar_payment
 id tv_category
 id tv_date
+id tv_date_pickup
+id tv_date_reserve
 id tv_description
 id tv_empty
 id tv_message

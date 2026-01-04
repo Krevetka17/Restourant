@@ -113,11 +113,17 @@
                 android:visibility="gone">
 
                 <TextView
+                    android:id="@+id/tv_date_pickup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Сегодня"
                     android:textSize="18sp"
                     android:textStyle="bold"
+                    android:textColor="?attr/colorPrimary"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="8dp"
                     android:layout_marginBottom="8dp" />
 
                 <Spinner
@@ -136,11 +142,17 @@
                 android:visibility="gone">
 
                 <TextView
+                    android:id="@+id/tv_date_reserve"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Сегодня"
                     android:textSize="18sp"
                     android:textStyle="bold"
+                    android:textColor="?attr/colorPrimary"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="8dp"
                     android:layout_marginBottom="8dp" />
 
                 <TextView
