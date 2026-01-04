@@ -238,21 +238,21 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback {
                     binding.llDelivery.visibility = View.VISIBLE
                     binding.llPickup.visibility = View.GONE
                     binding.llReserve.visibility = View.GONE
-                    binding.radioGroupPayment.visibility = View.VISIBLE
+                    binding.llPayment.visibility = View.VISIBLE
                 }
                 R.id.rb_pickup -> {
                     orderType = "pickup"
                     binding.llDelivery.visibility = View.GONE
                     binding.llPickup.visibility = View.VISIBLE
                     binding.llReserve.visibility = View.GONE
-                    binding.radioGroupPayment.visibility = View.VISIBLE
+                    binding.llPayment.visibility = View.VISIBLE
                 }
                 R.id.rb_reserve -> {
                     orderType = "reserve"
                     binding.llDelivery.visibility = View.GONE
                     binding.llPickup.visibility = View.GONE
                     binding.llReserve.visibility = View.VISIBLE
-                    binding.radioGroupPayment.visibility = View.GONE
+                    binding.llPayment.visibility = View.GONE
                 }
             }
             selectedStartTime = null

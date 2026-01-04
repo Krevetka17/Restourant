@@ -3543,6 +3543,7 @@ int id linear 0x7f08012c
 int id listMode 0x7f08012d
 int id list_item 0x7f08012e
 int id ll_delivery 0x7f08012f
+int id ll_payment 0x7f08027c
 int id ll_pickup 0x7f080130
 int id ll_reserve 0x7f080276
 int id locale 0x7f080131

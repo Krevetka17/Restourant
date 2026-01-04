@@ -89,6 +89,7 @@ id iv_old_avatar
 id iv_user_avatar
 id layout_quantity
 id ll_delivery
+id ll_payment
 id ll_pickup
 id ll_reserve
 id map

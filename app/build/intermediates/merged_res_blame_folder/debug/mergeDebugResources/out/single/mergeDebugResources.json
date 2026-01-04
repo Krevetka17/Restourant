@@ -16,16 +16,16 @@
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-59:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-57:\\layout_fragment_cart_list.xml.flat",
-        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-59:\\layout\\fragment_cart_list.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-57:\\layout_fragment_admin_support_chat.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-59:\\layout\\fragment_admin_support_chat.xml"
     },
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-57:\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-59:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-57:\\layout_fragment_admin_support_chat.xml.flat",
-        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-59:\\layout\\fragment_admin_support_chat.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-57:\\layout_fragment_cart_list.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-59:\\layout\\fragment_cart_list.xml"
     },
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-57:\\drawable_ic_camera.xml.flat",

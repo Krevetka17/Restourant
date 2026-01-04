@@ -47,6 +47,9 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
   public final LinearLayout llDelivery;
 
   @NonNull
+  public final LinearLayout llPayment;
+
+  @NonNull
   public final LinearLayout llPickup;
 
   @NonNull
@@ -103,16 +106,16 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
   private FragmentOrderPaymentBinding(@NonNull LinearLayout rootView, @NonNull ImageButton btnBack,
       @NonNull Button btnConfirmOrder, @NonNull TextInputEditText etAddress,
       @NonNull TextInputEditText etName, @NonNull TextInputEditText etPhone,
-      @NonNull LinearLayout llDelivery, @NonNull LinearLayout llPickup,
-      @NonNull LinearLayout llReserve, @NonNull RadioGroup radioGroupPayment,
-      @NonNull RadioGroup radioGroupType, @NonNull MaterialRadioButton rbCard,
-      @NonNull MaterialRadioButton rbCash, @NonNull MaterialRadioButton rbDelivery,
-      @NonNull MaterialRadioButton rbPickup, @NonNull MaterialRadioButton rbReserve,
-      @NonNull RecyclerView rvTables, @NonNull Spinner spinnerEndTime,
-      @NonNull Spinner spinnerStartTime, @NonNull Spinner spinnerTime,
-      @NonNull TextInputLayout tilAddress, @NonNull TextInputLayout tilName,
-      @NonNull TextInputLayout tilPhone, @NonNull Toolbar toolbarPayment,
-      @NonNull TextView tvTotal) {
+      @NonNull LinearLayout llDelivery, @NonNull LinearLayout llPayment,
+      @NonNull LinearLayout llPickup, @NonNull LinearLayout llReserve,
+      @NonNull RadioGroup radioGroupPayment, @NonNull RadioGroup radioGroupType,
+      @NonNull MaterialRadioButton rbCard, @NonNull MaterialRadioButton rbCash,
+      @NonNull MaterialRadioButton rbDelivery, @NonNull MaterialRadioButton rbPickup,
+      @NonNull MaterialRadioButton rbReserve, @NonNull RecyclerView rvTables,
+      @NonNull Spinner spinnerEndTime, @NonNull Spinner spinnerStartTime,
+      @NonNull Spinner spinnerTime, @NonNull TextInputLayout tilAddress,
+      @NonNull TextInputLayout tilName, @NonNull TextInputLayout tilPhone,
+      @NonNull Toolbar toolbarPayment, @NonNull TextView tvTotal) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnConfirmOrder = btnConfirmOrder;
@@ -120,6 +123,7 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
     this.etName = etName;
     this.etPhone = etPhone;
     this.llDelivery = llDelivery;
+    this.llPayment = llPayment;
     this.llPickup = llPickup;
     this.llReserve = llReserve;
     this.radioGroupPayment = radioGroupPayment;
@@ -200,6 +204,12 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
       id = R.id.ll_delivery;
       LinearLayout llDelivery = ViewBindings.findChildViewById(rootView, id);
       if (llDelivery == null) {
+        break missingId;
+      }
+
+      id = R.id.ll_payment;
+      LinearLayout llPayment = ViewBindings.findChildViewById(rootView, id);
+      if (llPayment == null) {
         break missingId;
       }
 
@@ -312,7 +322,7 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
       }
 
       return new FragmentOrderPaymentBinding((LinearLayout) rootView, btnBack, btnConfirmOrder,
-          etAddress, etName, etPhone, llDelivery, llPickup, llReserve, radioGroupPayment,
+          etAddress, etName, etPhone, llDelivery, llPayment, llPickup, llReserve, radioGroupPayment,
           radioGroupType, rbCard, rbCash, rbDelivery, rbPickup, rbReserve, rvTables, spinnerEndTime,
           spinnerStartTime, spinnerTime, tilAddress, tilName, tilPhone, toolbarPayment, tvTotal);
     }

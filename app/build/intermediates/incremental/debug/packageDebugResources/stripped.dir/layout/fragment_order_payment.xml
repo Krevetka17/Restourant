@@ -104,7 +104,7 @@
                     android:textColor="@android:color/darker_gray" />
             </LinearLayout>
 
-            <!-- На месте (только время прихода) -->
+            <!-- На месте -->
             <LinearLayout
                 android:id="@+id/ll_pickup"
                 android:layout_width="match_parent"
@@ -127,7 +127,7 @@
                     android:layout_marginBottom="16dp" />
             </LinearLayout>
 
-            <!-- Заказать столик (время прихода, время ухода, выбор столика) -->
+            <!-- Заказать столик -->
             <LinearLayout
                 android:id="@+id/ll_reserve"
                 android:layout_width="match_parent"
@@ -212,32 +212,40 @@
                     android:inputType="phone" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
+            <!-- Блок оплаты (скрывается в reserve) -->
+            <LinearLayout
+                android:id="@+id/ll_payment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Способ оплаты"
-                android:layout_marginTop="24dp"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                android:layout_marginTop="24dp">
 
-            <RadioGroup
-                android:id="@+id/radio_group_payment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/rb_cash"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Наличными"
-                    android:checked="true" />
+                    android:text="Способ оплаты"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/rb_card"
+                <RadioGroup
+                    android:id="@+id/radio_group_payment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Картой при получении" />
-            </RadioGroup>
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rb_cash"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Наличными"
+                        android:checked="true" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rb_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Картой при получении" />
+                </RadioGroup>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_total"
