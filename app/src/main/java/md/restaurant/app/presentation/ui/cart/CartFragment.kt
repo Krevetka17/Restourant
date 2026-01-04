@@ -1,4 +1,3 @@
-// presentation/ui/cart/CartFragment.kt
 package md.restaurant.app.presentation.ui.cart
 
 import android.os.Bundle
@@ -6,16 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.fragment.app.commit
+import md.restaurant.app.R
 import md.restaurant.app.databinding.FragmentCartBinding
-import md.restaurant.app.utils.CartManager
+import md.restaurant.app.presentation.ui.cart.list.CartListFragment
+import md.restaurant.app.presentation.ui.order.OrderPaymentFragment
 
 class CartFragment : Fragment() {
 
     private var _binding: FragmentCartBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var adapter: CartAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -27,33 +26,22 @@ class CartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = CartAdapter(
-            items = CartManager.getCart(requireContext()).toMutableList(),  // ← toMutableList()!
-            onQuantityChange = { id, qty ->
-                CartManager.updateQuantity(requireContext(), id, qty)
-                updateTotal()
-            },
-            onRemove = { id ->
-                CartManager.removeItem(requireContext(), id)
-                updateTotal()
-            }
-        )
-
-        binding.rvCart.layoutManager = LinearLayoutManager(requireContext())
-        binding.rvCart.adapter = adapter
-
-        updateTotal()
+        if (savedInstanceState == null) {
+            showCartList()
+        }
     }
 
-    private fun updateTotal() {
-        val total = CartManager.getTotal(requireContext())
-        binding.tvTotal.text = "Итого: ${total} MDL"
+    fun showCartList() {
+        childFragmentManager.commit {
+            replace(R.id.cart_container, CartListFragment())
+        }
     }
 
-    override fun onResume() {
-        super.onResume()
-        adapter.updateItems(CartManager.getCart(requireContext()))
-        updateTotal()
+    fun showPayment() {
+        childFragmentManager.commit {
+            replace(R.id.cart_container, OrderPaymentFragment())
+            addToBackStack("payment")
+        }
     }
 
     override fun onDestroyView() {

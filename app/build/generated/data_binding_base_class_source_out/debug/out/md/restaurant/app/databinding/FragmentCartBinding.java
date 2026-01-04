@@ -4,12 +4,10 @@ package md.restaurant.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
@@ -22,20 +20,11 @@ public final class FragmentCartBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final Button btnCheckout;
+  public final FrameLayout cartContainer;
 
-  @NonNull
-  public final RecyclerView rvCart;
-
-  @NonNull
-  public final TextView tvTotal;
-
-  private FragmentCartBinding(@NonNull LinearLayout rootView, @NonNull Button btnCheckout,
-      @NonNull RecyclerView rvCart, @NonNull TextView tvTotal) {
+  private FragmentCartBinding(@NonNull LinearLayout rootView, @NonNull FrameLayout cartContainer) {
     this.rootView = rootView;
-    this.btnCheckout = btnCheckout;
-    this.rvCart = rvCart;
-    this.tvTotal = tvTotal;
+    this.cartContainer = cartContainer;
   }
 
   @Override
@@ -65,25 +54,13 @@ public final class FragmentCartBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btn_checkout;
-      Button btnCheckout = ViewBindings.findChildViewById(rootView, id);
-      if (btnCheckout == null) {
+      id = R.id.cart_container;
+      FrameLayout cartContainer = ViewBindings.findChildViewById(rootView, id);
+      if (cartContainer == null) {
         break missingId;
       }
 
-      id = R.id.rv_cart;
-      RecyclerView rvCart = ViewBindings.findChildViewById(rootView, id);
-      if (rvCart == null) {
-        break missingId;
-      }
-
-      id = R.id.tv_total;
-      TextView tvTotal = ViewBindings.findChildViewById(rootView, id);
-      if (tvTotal == null) {
-        break missingId;
-      }
-
-      return new FragmentCartBinding((LinearLayout) rootView, btnCheckout, rvCart, tvTotal);
+      return new FragmentCartBinding((LinearLayout) rootView, cartContainer);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

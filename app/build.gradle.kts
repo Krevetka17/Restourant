@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.kotlin.parcelize)
 
-    // САМОЕ ВАЖНОЕ — используем новую версию Hilt, которая поддерживает Kotlin 2.2.0
+    // Hilt
     id("com.google.dagger.hilt.android") version "2.53" apply false
 }
 
@@ -67,19 +67,21 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.androidx.viewpager2)
 
-    // HILT — ВЕРСИЯ 2.53 (единственная, которая поддерживает Kotlin 2.2.0+)
+    // HILT
     implementation("com.google.dagger:hilt-android:2.53")
     kapt("com.google.dagger:hilt-android-compiler:2.53")
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
+    // Google Maps
+    implementation("com.google.android.gms:play-services-maps:19.0.0")
+    implementation("com.google.android.gms:play-services-location:21.3.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
 
-// Добавляем Hilt плагин
 apply(plugin = "dagger.hilt.android.plugin")
 apply(plugin = "kotlin-kapt")
 

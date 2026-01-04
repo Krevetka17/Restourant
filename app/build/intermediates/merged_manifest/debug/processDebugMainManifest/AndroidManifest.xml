@@ -8,10 +8,24 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="36" />
 
-    <!-- Разрешения (если будут нужны позже) -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Include required permissions for Google Maps API to run. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <queries>
+
+        <!-- Needs to be explicitly declared on Android R+ -->
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
 
     <permission
         android:name="md.restaurant.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -33,8 +47,10 @@
         android:testOnly="true"
         android:theme="@style/Theme.Restaurant"
         android:usesCleartextTraffic="true" >
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCeyvdf2gmh8J-VvBHqrC7f0zRD4Lj0yfU" />
 
-        <!-- ЭТО ГЛАВНОЕ — ДОБАВЛЯЕМ MainActivity КАК LAUNCHER -->
         <activity
             android:name="md.restaurant.app.MainActivity"
             android:exported="true" >
@@ -44,6 +60,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Needs to be explicitly declared on P+ -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

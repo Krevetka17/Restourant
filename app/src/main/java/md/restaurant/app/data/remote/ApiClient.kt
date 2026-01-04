@@ -1,4 +1,3 @@
-// Файл: data/remote/ApiClient.kt — верни как было!
 package md.restaurant.app.data.remote
 
 import md.restaurant.app.utils.AuthManager
