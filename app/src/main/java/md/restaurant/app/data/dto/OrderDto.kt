@@ -1,6 +1,7 @@
 package md.restaurant.app.data.remote.dto
 
 data class CreateOrderRequest(
+    val userId: String,
     val items: List<CartItemRequest>,
     val total: Double,
     val delivery: Boolean,

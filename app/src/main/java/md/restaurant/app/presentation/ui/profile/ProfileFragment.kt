@@ -20,6 +20,7 @@ import md.restaurant.app.presentation.ui.profile.edit.EditProfileFragment
 import md.restaurant.app.presentation.ui.profile.login.LoginFragment
 import md.restaurant.app.presentation.ui.profile.main.MainProfileFragment
 import md.restaurant.app.presentation.ui.profile.notifications.NotificationsFragment
+import md.restaurant.app.presentation.ui.profile.orders.MyOrdersFragment
 import md.restaurant.app.presentation.ui.profile.register.RegisterFragment
 import md.restaurant.app.utils.AuthManager
 import retrofit2.Retrofit
@@ -30,7 +31,7 @@ class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
     private val handler = Handler(Looper.getMainLooper())
-    private val refreshInterval = 20_000L // 20 секунд
+    private val refreshInterval = 20_000L
 
     private val refreshRunnable = object : Runnable {
         override fun run() {
@@ -53,7 +54,7 @@ class ProfileFragment : Fragment() {
 
         if (AuthManager.isLoggedIn(requireContext())) {
             showMainProfile()
-            refreshUserData() // Сразу обновляем
+            refreshUserData()
         } else {
             showLogin()
         }
@@ -82,12 +83,9 @@ class ProfileFragment : Fragment() {
                 }
                 AuthManager.saveAuth(requireContext(), AuthManager.getToken(requireContext())!!, user)
 
-                // Обновляем текущий фрагмент
                 (childFragmentManager.findFragmentById(R.id.profile_container) as? MainProfileFragment)
                     ?.updateUserInfo()
-            } catch (e: Exception) {
-                // Игнорируем ошибки
-            }
+            } catch (e: Exception) {}
         }
     }
 
@@ -127,6 +125,13 @@ class ProfileFragment : Fragment() {
         childFragmentManager.commit {
             replace(R.id.profile_container, NotificationsFragment())
             addToBackStack("notifications")
+        }
+    }
+
+    fun showMyOrders() {
+        childFragmentManager.commit {
+            replace(R.id.profile_container, MyOrdersFragment())
+            addToBackStack("my_orders")
         }
     }
 

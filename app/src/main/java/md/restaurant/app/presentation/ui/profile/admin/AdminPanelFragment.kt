@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import md.restaurant.app.R
 import md.restaurant.app.databinding.FragmentAdminPanelBinding
+import md.restaurant.app.presentation.ui.profile.admin.AdminOrdersListFragment
 import md.restaurant.app.presentation.ui.settings.AdminSupportTicketsFragment
 
 class AdminPanelFragment : Fragment() {
@@ -23,6 +24,13 @@ class AdminPanelFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnOrders.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.profile_container, AdminOrdersListFragment())
+                .addToBackStack("admin_orders_list")
+                .commit()
+        }
 
         binding.btnRequests.setOnClickListener {
             parentFragmentManager.beginTransaction()

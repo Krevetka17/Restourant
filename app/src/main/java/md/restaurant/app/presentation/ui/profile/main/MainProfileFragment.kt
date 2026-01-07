@@ -1,7 +1,6 @@
 package md.restaurant.app.presentation.ui.profile.main
 
 import android.content.ClipData
-import kotlinx.coroutines.Dispatchers
 import android.content.ClipboardManager
 import android.content.Context
 import android.graphics.BitmapFactory
@@ -14,15 +13,16 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import md.restaurant.app.R
 import md.restaurant.app.data.remote.AuthApiClient
 import md.restaurant.app.databinding.FragmentMainProfileBinding
 import md.restaurant.app.presentation.ui.profile.ProfileFragment
 import md.restaurant.app.utils.AuthManager
 import md.restaurant.app.presentation.ui.profile.notifications.NotificationBadgeViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainProfileFragment : Fragment() {
 
@@ -44,6 +44,7 @@ class MainProfileFragment : Fragment() {
 
         setupSwipeRefresh()
         updateUserInfo()
+        updateAdminButton() // сразу проверяем
         setupButtons()
         observeNotificationBadge()
     }
@@ -53,7 +54,6 @@ class MainProfileFragment : Fragment() {
             refreshAllData()
         }
 
-        // Используем стандартные цвета из Material (всегда есть)
         binding.swipeRefresh.setColorSchemeResources(
             android.R.color.holo_blue_bright,
             android.R.color.holo_green_light,
@@ -71,7 +71,10 @@ class MainProfileFragment : Fragment() {
             (parentFragment as ProfileFragment).showNotifications()
         }
 
-        binding.btnAdminPanel.isVisible = AuthManager.getUser(requireContext())?.isAdmin == true
+        binding.btnMyOrders.setOnClickListener {
+            (parentFragment as ProfileFragment).showMyOrders()
+        }
+
         binding.btnAdminPanel.setOnClickListener {
             (parentFragment as ProfileFragment).showAdminPanel()
         }
@@ -88,6 +91,11 @@ class MainProfileFragment : Fragment() {
             clipboard.setPrimaryClip(clip)
             Toast.makeText(requireContext(), "ID скопирован!", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun updateAdminButton() {
+        val isAdmin = AuthManager.getUser(requireContext())?.isAdmin == true
+        binding.btnAdminPanel.isVisible = isAdmin
     }
 
     private fun observeNotificationBadge() {
@@ -112,6 +120,7 @@ class MainProfileFragment : Fragment() {
                 AuthManager.saveAuth(requireContext(), AuthManager.getToken(requireContext())!!, freshUser)
 
                 updateUserInfo()
+                updateAdminButton() // обновляем кнопку админа
                 badgeViewModel.checkUnreadNotifications()
 
             } catch (e: Exception) {
@@ -140,6 +149,8 @@ class MainProfileFragment : Fragment() {
         } else {
             binding.ivAvatar.setImageResource(R.drawable.ic_default_user)
         }
+
+        updateAdminButton() // на всякий случай
     }
 
     private fun base64ToBitmap(base64: String): android.graphics.Bitmap {

@@ -23,15 +23,19 @@ public final class FragmentAdminPanelBinding implements ViewBinding {
   public final Button btnBack;
 
   @NonNull
+  public final Button btnOrders;
+
+  @NonNull
   public final Button btnRequests;
 
   @NonNull
   public final Button btnSupportTickets;
 
   private FragmentAdminPanelBinding(@NonNull LinearLayout rootView, @NonNull Button btnBack,
-      @NonNull Button btnRequests, @NonNull Button btnSupportTickets) {
+      @NonNull Button btnOrders, @NonNull Button btnRequests, @NonNull Button btnSupportTickets) {
     this.rootView = rootView;
     this.btnBack = btnBack;
+    this.btnOrders = btnOrders;
     this.btnRequests = btnRequests;
     this.btnSupportTickets = btnSupportTickets;
   }
@@ -69,6 +73,12 @@ public final class FragmentAdminPanelBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btn_orders;
+      Button btnOrders = ViewBindings.findChildViewById(rootView, id);
+      if (btnOrders == null) {
+        break missingId;
+      }
+
       id = R.id.btn_requests;
       Button btnRequests = ViewBindings.findChildViewById(rootView, id);
       if (btnRequests == null) {
@@ -81,7 +91,7 @@ public final class FragmentAdminPanelBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAdminPanelBinding((LinearLayout) rootView, btnBack, btnRequests,
+      return new FragmentAdminPanelBinding((LinearLayout) rootView, btnBack, btnOrders, btnRequests,
           btnSupportTickets);
     }
     String missingId = rootView.getResources().getResourceName(id);

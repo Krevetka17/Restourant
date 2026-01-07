@@ -1,334 +1,354 @@
 [
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_default_user.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_default_user.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_copy.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_copy.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_item_notification.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/item_notification.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_remove.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_remove.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_card_background.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/card_background.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "md.restaurant.app-main-60:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_cart.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_cart.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_notification_list.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_notification_list.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_support_avatar.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_support_avatar.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_arrow_right.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_arrow_right.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_circle_gray.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\circle_gray.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_order_payment.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_order_payment.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_settings.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_settings.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_notification_badge.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_notification_badge.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "md.restaurant.app-main-60:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_order.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_order.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_item_admin_ticket.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/item_admin_ticket.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_card_background.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\card_background.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_cart.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_cart.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_my_orders.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_my_orders.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_send.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_send.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_bg_snackbar.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\bg_snackbar.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_notifications_with_badge.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_notifications_with_badge.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_admin_ticket.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_admin_ticket.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/xml_backup_rules.xml.flat",
-        "source": "md.restaurant.app-main-60:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_order_payment.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_order_payment.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_cart.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_cart.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_support_chat.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_support_chat.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_rounded_quantity_bg.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/rounded_quantity_bg.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_check_circle.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_check_circle.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_notifications.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_notifications.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\activity_main.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_main_profile.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_main_profile.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_notification_unread.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_notification_unread.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_bg_user_bubble.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/bg_user_bubble.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_bg_support_bubble.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\bg_support_bubble.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "md.restaurant.app-main-60:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_nav_profile_with_badge.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\nav_profile_with_badge.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_card_gradient.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/card_gradient.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\navigation\\nav_graph.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_snackbar_custom.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/snackbar_custom.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_settings_container.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_settings_container.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "md.restaurant.app-main-60:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_settings_container.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_settings_container.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_admin_requests.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_admin_requests.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_food_placeholder.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\food_placeholder.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_support_specific_chat.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_support_specific_chat.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_login.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_login.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_item_history_ticket.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/item_history_ticket.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_admin_support_tickets.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_admin_support_tickets.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_admin_panel.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_admin_panel.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_edit_profile.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_edit_profile.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_bg_snackbar.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/bg_snackbar.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_item_menu.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/item_menu.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_notification.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_notification.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "md.restaurant.app-main-60:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_admin_orders_list.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_admin_orders_list.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_item_support_message.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/item_support_message.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "md.restaurant.app-main-60:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_admin_support_message.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_admin_support_message.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "md.restaurant.app-main-60:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_nav_profile_selector.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\nav_profile_selector.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_notification_unread.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_notification_unread.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_item_cart.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/item_cart.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_underline_blue.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_underline_blue.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_language.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_language.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_bg_support_bubble.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/bg_support_bubble.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_home.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_home.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_home.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_photo_missing.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_photo_missing.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_support_history.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_support_history.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_notification_badge.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_notification_badge.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_underline_blue.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_underline_blue.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_snackbar_custom.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\snackbar_custom.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_nav_profile_selector.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/nav_profile_selector.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_bg_ticket_item.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/bg_ticket_item.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_notifications.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_notifications.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_copy.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_copy.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_notifications_with_badge.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_notifications_with_badge.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_launcher_background.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_food_placeholder.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/food_placeholder.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_cart.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_cart.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_photo_missing.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_photo_missing.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_history_ticket.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_history_ticket.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_cart_list.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_cart_list.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_register.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_register.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_bg_input_message.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/bg_input_message.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_circle_white.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\circle_white.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/menu_bottom_nav_menu.xml.flat",
-        "source": "md.restaurant.app-main-60:/menu/bottom_nav_menu.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_admin_requests.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_admin_requests.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_add_shopping_cart.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_add_shopping_cart.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_add_shopping_cart.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_add_shopping_cart.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/xml_data_extraction_rules.xml.flat",
-        "source": "md.restaurant.app-main-60:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_add.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_item_admin_request.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/item_admin_request.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_arrow_back.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_arrow_back.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_circle_gray.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/circle_gray.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_profile.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "md.restaurant.app-main-60:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_notifications.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_notifications.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_camera.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_camera.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_send.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_send.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_notifications.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_notifications.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_cart.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_cart.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "md.restaurant.app-main-60:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_card_gradient.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\card_gradient.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_admin_support_chat.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_admin_support_chat.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_admin_order.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_admin_order.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/navigation_nav_graph.xml.flat",
-        "source": "md.restaurant.app-main-60:/navigation/nav_graph.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_admin_panel.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_admin_panel.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_edit_profile.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_edit_profile.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_admin_support_chat.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_admin_support_chat.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "md.restaurant.app-main-60:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_support_avatar.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_support_avatar.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_circle_white.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/circle_white.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_main_profile.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_main_profile.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_login.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_login.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_arrow_right.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_arrow_right.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_check_circle.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_check_circle.xml"
+        "merged": "md.restaurant.app-debug-58:/layout_item_admin_order.xml.flat",
+        "source": "md.restaurant.app-main-60:/layout/item_admin_order.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_settings.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_settings.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_notification_list.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_notification_list.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_support_chat.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_support_chat.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "md.restaurant.app-main-60:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_activity_main.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/activity_main.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_bg_ticket_item.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\bg_ticket_item.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_nav_profile_with_badge.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/nav_profile_with_badge.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_bg_user_bubble.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\bg_user_bubble.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "md.restaurant.app-main-60:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_register.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_register.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_arrow_back.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_arrow_back.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_support_message.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_support_message.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_home.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_home.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_person.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_person.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_person.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_person.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_add.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_add.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_support_specific_chat.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_support_specific_chat.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_language.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_language.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_admin_request.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_admin_request.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_remove.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_remove.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_default_user.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_default_user.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_profile.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_profile.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_support_history.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_support_history.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_admin_support_tickets.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_admin_support_tickets.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/drawable_ic_settings.xml.flat",
-        "source": "md.restaurant.app-main-60:/drawable/ic_settings.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_cart_list.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_cart_list.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_item_admin_support_message.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/item_admin_support_message.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_settings.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_bg_input_message.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\bg_input_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_ic_camera.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_camera.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_menu.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_rounded_quantity_bg.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\rounded_quantity_bg.xml"
     }
 ]

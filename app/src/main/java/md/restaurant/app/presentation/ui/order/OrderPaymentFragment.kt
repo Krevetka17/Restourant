@@ -30,10 +30,12 @@ import kotlinx.coroutines.withContext
 import md.restaurant.app.R
 import md.restaurant.app.databinding.FragmentOrderPaymentBinding
 import md.restaurant.app.utils.CartManager
+import md.restaurant.app.utils.AuthManager
 import md.restaurant.app.data.remote.dto.CartItemRequest
 import md.restaurant.app.data.remote.dto.CreateOrderRequest
 import md.restaurant.app.data.remote.order.OrderApiClient
 import md.restaurant.app.presentation.ui.cart.CartFragment
+import md.restaurant.app.presentation.ui.profile.ProfileFragment
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -147,7 +149,6 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
         dpd.minDate = todayCal
         dpd.maxDate = maxCal
 
-        // Создаём список всех воскресений в диапазоне и отключаем их
         val disabledDays = mutableListOf<Calendar>()
         val loopCal = todayCal.clone() as Calendar
         while (loopCal <= maxCal) {
@@ -347,6 +348,10 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
                     binding.llPickup.visibility = View.GONE
                     binding.llReserve.visibility = View.VISIBLE
                     binding.llPayment.visibility = View.GONE
+
+                    if (selectedDate != null && selectedStartTime != null && selectedEndTime != null) {
+                        loadAvailableTables(selectedStartTime!!, selectedEndTime!!)
+                    }
                 }
             }
             selectedStartTime = null
@@ -408,6 +413,12 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
 
         if (hasError) return
 
+        val userId = AuthManager.getUser(context)?.id
+        if (userId == null) {
+            Snackbar.make(binding.root, "Ошибка авторизации", Snackbar.LENGTH_SHORT).show()
+            return
+        }
+
         val itemsRequest = cart.map {
             CartItemRequest(
                 menuItemId = it.menuItem._id,
@@ -419,6 +430,7 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
         val finalEndTime = if (orderType == "reserve" && selectedEndTime != null) add30Minutes(selectedEndTime!!) else selectedEndTime
 
         val request = CreateOrderRequest(
+            userId = userId,
             items = itemsRequest,
             total = CartManager.getTotal(context),
             delivery = orderType == "delivery",
@@ -434,8 +446,10 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
                 val response = OrderApiClient.api.createOrder(request)
                 if (response.success) {
                     CartManager.clearCart(context)
-                    Snackbar.make(binding.root, "Заказ №${response.orderId} оформлен!", Snackbar.LENGTH_LONG).show()
-                    (parentFragment as CartFragment).showCartList()
+                    Snackbar.make(binding.root, "Ожидайте звонка администрации для подтверждения заказа", Snackbar.LENGTH_LONG).show()
+
+                    parentFragmentManager.popBackStack()
+                    (parentFragment?.parentFragment as? ProfileFragment)?.showMyOrders()
                 } else {
                     Snackbar.make(binding.root, "Ошибка оформления", Snackbar.LENGTH_SHORT).show()
                 }

@@ -16,6 +16,15 @@
         android:layout_marginBottom="24dp"/>
 
     <Button
+        android:id="@+id/btn_orders"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Заказы / Бронь"
+        android:backgroundTint="#D32F2F"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
         android:id="@+id/btn_requests"
         android:layout_width="match_parent"
         android:layout_height="56dp"
