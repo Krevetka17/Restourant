@@ -4,11 +4,11 @@ package md.restaurant.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
@@ -18,24 +18,29 @@ import md.restaurant.app.R;
 
 public final class FragmentNotificationListBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final SwipeRefreshLayout rootView;
 
   @NonNull
   public final RecyclerView recyclerNotifications;
 
   @NonNull
+  public final SwipeRefreshLayout swipeRefresh;
+
+  @NonNull
   public final TextView tvEmpty;
 
-  private FragmentNotificationListBinding(@NonNull LinearLayout rootView,
-      @NonNull RecyclerView recyclerNotifications, @NonNull TextView tvEmpty) {
+  private FragmentNotificationListBinding(@NonNull SwipeRefreshLayout rootView,
+      @NonNull RecyclerView recyclerNotifications, @NonNull SwipeRefreshLayout swipeRefresh,
+      @NonNull TextView tvEmpty) {
     this.rootView = rootView;
     this.recyclerNotifications = recyclerNotifications;
+    this.swipeRefresh = swipeRefresh;
     this.tvEmpty = tvEmpty;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public SwipeRefreshLayout getRoot() {
     return rootView;
   }
 
@@ -66,14 +71,16 @@ public final class FragmentNotificationListBinding implements ViewBinding {
         break missingId;
       }
 
+      SwipeRefreshLayout swipeRefresh = (SwipeRefreshLayout) rootView;
+
       id = R.id.tv_empty;
       TextView tvEmpty = ViewBindings.findChildViewById(rootView, id);
       if (tvEmpty == null) {
         break missingId;
       }
 
-      return new FragmentNotificationListBinding((LinearLayout) rootView, recyclerNotifications,
-          tvEmpty);
+      return new FragmentNotificationListBinding((SwipeRefreshLayout) rootView,
+          recyclerNotifications, swipeRefresh, tvEmpty);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

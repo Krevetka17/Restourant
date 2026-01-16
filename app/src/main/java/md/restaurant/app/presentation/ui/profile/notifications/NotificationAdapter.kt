@@ -13,7 +13,8 @@ class NotificationAdapter(
 ) : ListAdapter<NotificationItem, NotificationAdapter.ViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemNotificationBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemNotificationBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -21,7 +22,8 @@ class NotificationAdapter(
         holder.bind(getItem(position), onNotificationRead)
     }
 
-    inner class ViewHolder(private val binding: ItemNotificationBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: ItemNotificationBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: NotificationItem, onMarkAsRead: (String) -> Unit) {
             binding.tvCategory.text = item.category
@@ -40,7 +42,9 @@ class NotificationAdapter(
     }
 
     class DiffCallback : DiffUtil.ItemCallback<NotificationItem>() {
-        override fun areItemsTheSame(old: NotificationItem, new: NotificationItem) = old.id == new.id
+        override fun areItemsTheSame(old: NotificationItem, new: NotificationItem) =
+            old.id == new.id
+
         override fun areContentsTheSame(old: NotificationItem, new: NotificationItem) = old == new
     }
 }

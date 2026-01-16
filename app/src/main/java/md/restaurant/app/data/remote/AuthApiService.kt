@@ -30,4 +30,5 @@ interface AuthApiService {
     suspend fun getNotifications(): List<NotificationDto>
     @POST("notifications/{id}/read")
     suspend fun markAsRead(@Path("id") id: String): retrofit2.Response<Unit>
+
 }

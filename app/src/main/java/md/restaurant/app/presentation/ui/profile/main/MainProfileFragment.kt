@@ -120,8 +120,11 @@ class MainProfileFragment : Fragment() {
                 AuthManager.saveAuth(requireContext(), AuthManager.getToken(requireContext())!!, freshUser)
 
                 updateUserInfo()
-                updateAdminButton() // обновляем кнопку админа
+                updateAdminButton()
                 badgeViewModel.checkUnreadNotifications()
+
+                // Обновляем уведомления
+                (parentFragment as? ProfileFragment)?.refreshNotifications()
 
             } catch (e: Exception) {
                 Toast.makeText(requireContext(), "Нет сети", Toast.LENGTH_SHORT).show()

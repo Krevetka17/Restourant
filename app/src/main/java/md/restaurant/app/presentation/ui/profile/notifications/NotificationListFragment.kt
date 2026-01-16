@@ -1,6 +1,7 @@
 package md.restaurant.app.presentation.ui.profile.notifications
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,13 +16,12 @@ import md.restaurant.app.databinding.FragmentNotificationListBinding
 class NotificationListFragment : Fragment() {
 
     private var _binding: FragmentNotificationListBinding? = null
-    private val binding get() = _binding!!  // Безопасно только внутри onViewCreated / onDestroyView
+    private val binding get() = _binding!!
 
     private val adapter = NotificationAdapter { notificationId ->
         markNotificationAsRead(notificationId)
     }
 
-    // Жизненный цикл корутины привязан к фрагменту
     private val fragmentScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
 
     companion object {
@@ -45,12 +45,22 @@ class NotificationListFragment : Fragment() {
         binding.recyclerNotifications.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerNotifications.adapter = adapter
 
+        binding.swipeRefresh.setOnRefreshListener {
+            loadNotifications(isUnread)
+        }
+
+        loadNotifications(isUnread)
+    }
+
+    fun refreshNotifications() {
+        val isUnread = arguments?.getBoolean("unread") ?: true
         loadNotifications(isUnread)
     }
 
     private fun loadNotifications(unreadOnly: Boolean) {
-        // Проверяем, что binding ещё живой
         val currentBinding = _binding ?: return
+
+        currentBinding.swipeRefresh.isRefreshing = true
 
         fragmentScope.launch {
             try {
@@ -58,7 +68,10 @@ class NotificationListFragment : Fragment() {
                     AuthApiClient.api.getNotifications()
                 }
 
-                println("Уведомления получено: ${notifications.size}")
+                Log.d("Notifications", "Получено уведомлений: ${notifications.size}")
+                notifications.forEach {
+                    Log.d("Notifications", "Уведомление: title=${it.title}, message=${it.message}, category=${it.category}, id=${it.id}")
+                }
 
                 val filtered = if (unreadOnly) {
                     notifications.filter { !it.isRead }
@@ -66,7 +79,6 @@ class NotificationListFragment : Fragment() {
                     notifications.filter { it.isRead }
                 }
 
-                // Проверяем снова — вдруг фрагмент уже уничтожен
                 if (_binding == null) return@launch
 
                 if (filtered.isEmpty()) {
@@ -81,7 +93,7 @@ class NotificationListFragment : Fragment() {
                             id = it.id ?: "",
                             title = it.title,
                             message = it.message,
-                            category = it.category ?: "Система",
+                            category = it.category ?: "Администрация",
                             date = it.createdAt.split("T").getOrNull(0) ?: "",
                             isRead = it.isRead
                         )
@@ -91,8 +103,12 @@ class NotificationListFragment : Fragment() {
             } catch (e: Exception) {
                 e.printStackTrace()
                 if (_binding != null) {
-                    currentBinding.tvEmpty.text = "Ошибка загрузки: ${e.message}"
+                    currentBinding.tvEmpty.text = "Ошибка загрузки"
                     currentBinding.tvEmpty.isVisible = true
+                }
+            } finally {
+                if (_binding != null) {
+                    currentBinding.swipeRefresh.isRefreshing = false
                 }
             }
         }
@@ -117,6 +133,6 @@ class NotificationListFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        fragmentScope.cancel()  // Отменяем все корутины
+        fragmentScope.cancel()
     }
 }

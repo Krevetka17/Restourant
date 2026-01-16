@@ -106,11 +106,15 @@ class AdminOrderViewHolder(private val binding: ItemAdminOrderBinding) : Recycle
         binding.btnConfirm.setOnClickListener {
             (binding.root.context as? androidx.fragment.app.FragmentActivity)?.lifecycleScope?.launch {
                 try {
-                    AdminApiClient.api.confirmOrder(order._id)
-                    val newList = adapter.currentList.toMutableList()
-                    newList.remove(order)
-                    adapter.submitList(newList)
-                } catch (e: Exception) {}
+                    val response = AdminApiClient.api.confirmOrder(order._id)
+                    if (response.isSuccessful) {
+                        val newList = adapter.currentList.toMutableList()
+                        newList.remove(order)
+                        adapter.submitList(newList)
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
         }
 
@@ -123,11 +127,15 @@ class AdminOrderViewHolder(private val binding: ItemAdminOrderBinding) : Recycle
 
             (binding.root.context as? androidx.fragment.app.FragmentActivity)?.lifecycleScope?.launch {
                 try {
-                    AdminApiClient.api.rejectOrder(order._id, mapOf("reason" to reason))
-                    val newList = adapter.currentList.toMutableList()
-                    newList.remove(order)
-                    adapter.submitList(newList)
-                } catch (e: Exception) {}
+                    val response = AdminApiClient.api.rejectOrder(order._id, mapOf("reason" to reason))
+                    if (response.isSuccessful) {
+                        val newList = adapter.currentList.toMutableList()
+                        newList.remove(order)
+                        adapter.submitList(newList)
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
         }
     }

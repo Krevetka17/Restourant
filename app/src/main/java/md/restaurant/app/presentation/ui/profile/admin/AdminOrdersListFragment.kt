@@ -43,19 +43,26 @@ class AdminOrdersListFragment : Fragment() {
     }
 
     private fun loadPendingOrders() {
-        binding.swipeRefresh.isRefreshing = true
+        val currentBinding = _binding ?: return  // защита от краша
+
+        currentBinding.swipeRefresh.isRefreshing = true
 
         lifecycleScope.launch {
             try {
                 val orders = AdminApiClient.api.getPendingOrders()
+                if (_binding == null) return@launch  // фрагмент уничтожен
+
                 adapter.submitList(orders)
-                binding.tvEmpty.visibility = if (orders.isEmpty()) View.VISIBLE else View.GONE
+                currentBinding.tvEmpty.visibility = if (orders.isEmpty()) View.VISIBLE else View.GONE
             } catch (e: Exception) {
                 e.printStackTrace()
-                binding.tvEmpty.text = "Ошибка загрузки"
-                binding.tvEmpty.visibility = View.VISIBLE
+                if (_binding == null) return@launch
+                currentBinding.tvEmpty.text = "Ошибка загрузки"
+                currentBinding.tvEmpty.visibility = View.VISIBLE
             } finally {
-                binding.swipeRefresh.isRefreshing = false
+                if (_binding != null) {
+                    currentBinding.swipeRefresh.isRefreshing = false
+                }
             }
         }
     }

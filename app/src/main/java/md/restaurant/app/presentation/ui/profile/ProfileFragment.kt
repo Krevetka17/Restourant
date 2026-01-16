@@ -19,6 +19,7 @@ import md.restaurant.app.presentation.ui.profile.admin.AdminPanelFragment
 import md.restaurant.app.presentation.ui.profile.edit.EditProfileFragment
 import md.restaurant.app.presentation.ui.profile.login.LoginFragment
 import md.restaurant.app.presentation.ui.profile.main.MainProfileFragment
+import md.restaurant.app.presentation.ui.profile.notifications.NotificationListFragment
 import md.restaurant.app.presentation.ui.profile.notifications.NotificationsFragment
 import md.restaurant.app.presentation.ui.profile.orders.MyOrdersFragment
 import md.restaurant.app.presentation.ui.profile.register.RegisterFragment
@@ -132,6 +133,18 @@ class ProfileFragment : Fragment() {
         childFragmentManager.commit {
             replace(R.id.profile_container, MyOrdersFragment())
             addToBackStack("my_orders")
+        }
+    }
+
+    fun refreshNotifications() {
+        childFragmentManager.fragments.forEach { fragment ->
+            if (fragment is NotificationsFragment) {
+                fragment.childFragmentManager.fragments.forEach { child ->
+                    if (child is NotificationListFragment) {
+                        child.refreshNotifications()
+                    }
+                }
+            }
         }
     }
 

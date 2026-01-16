@@ -24,10 +24,6 @@
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_admin_support_message.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-57:/layout/item_admin_order.xml",
-        "source": "md.restaurant.app-main-60:/layout/item_admin_order.xml"
-    },
-    {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-57:\\layout\\fragment_notification_list.xml",
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_notification_list.xml"
     },
@@ -70,6 +66,10 @@
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-57:\\layout\\item_cart.xml",
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_cart.xml"
+    },
+    {
+        "merged": "md.restaurant.app-mergeDebugResources-57:/layout/fragment_notification_list.xml",
+        "source": "md.restaurant.app-main-60:/layout/fragment_notification_list.xml"
     },
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-57:\\layout\\fragment_support_specific_chat.xml",
