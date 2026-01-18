@@ -38,7 +38,6 @@ import md.restaurant.app.presentation.ui.cart.CartFragment
 import md.restaurant.app.presentation.ui.profile.ProfileFragment
 import java.text.SimpleDateFormat
 import java.util.Calendar
-import java.util.Date
 import java.util.Locale
 
 class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.OnDateSetListener {
@@ -207,7 +206,7 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
                 selectedStartTime = timeList[position]
                 updateEndTimeSpinner(position)
                 selectedEndTime = null
-                if (selectedEndTime != null && selectedDate != null) {
+                if (selectedStartTime != null && selectedEndTime != null && selectedDate != null) {
                     loadAvailableTables(selectedStartTime!!, selectedEndTime!!)
                 }
             }
@@ -217,7 +216,7 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
         binding.spinnerEndTime.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 selectedEndTime = (binding.spinnerEndTime.adapter.getItem(position) as String)
-                if (selectedStartTime != null && selectedDate != null) {
+                if (selectedStartTime != null && selectedDate != null && selectedEndTime != null) {
                     loadAvailableTables(selectedStartTime!!, selectedEndTime!!)
                 }
             }
@@ -421,7 +420,7 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
 
         val itemsRequest = cart.map {
             CartItemRequest(
-                menuItemId = it.menuItem._id,
+                menuItemId = it.menuItem._id.orEmpty(),
                 quantity = it.quantity,
                 price = it.menuItem.price
             )

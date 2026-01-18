@@ -31,6 +31,7 @@ drawable ic_notifications_with_badge
 drawable ic_person
 drawable ic_photo_missing
 drawable ic_remove
+drawable ic_search
 drawable ic_send
 drawable ic_settings
 drawable ic_support_avatar
@@ -38,6 +39,7 @@ drawable ic_underline_blue
 drawable nav_profile_selector
 drawable nav_profile_with_badge
 drawable rounded_quantity_bg
+id appBar
 id bottom_navigation
 id btn_add_to_cart
 id btn_admin_panel
@@ -72,9 +74,12 @@ id btn_support
 id btn_support_tickets
 id cartFragment
 id cart_container
-id category_container
+id categories_container
+id category_chips_container
 id cb_confirm
 id chat_container
+id collapsing_toolbar
+id dish_detail_container
 id et_address
 id et_email
 id et_login
@@ -87,6 +92,7 @@ id et_reason
 id et_repeat_password
 id homeFragment
 id iv_avatar
+id iv_dish
 id iv_food
 id iv_new_avatar
 id iv_old_avatar
@@ -97,6 +103,7 @@ id ll_payment
 id ll_pickup
 id ll_reserve
 id map
+id menu_scroll
 id nav_graph
 id nav_host_fragment
 id profileFragment
@@ -111,11 +118,13 @@ id rb_reserve
 id recycler_notifications
 id recycler_requests
 id rv_cart
+id rv_category_items
 id rv_history
-id rv_menu
 id rv_orders
 id rv_tables
 id rv_tickets
+id search_edit_text
+id search_layout
 id settingsFragment
 id settings_container
 id snackbar_text
@@ -133,12 +142,16 @@ id toolbar
 id toolbar_orders
 id toolbar_payment
 id tv_address
+id tv_allergens
+id tv_calories
 id tv_category
+id tv_category_title
 id tv_date
 id tv_date_pickup
 id tv_date_reserve
 id tv_description
 id tv_empty
+id tv_ingredients
 id tv_items
 id tv_message
 id tv_name
@@ -148,6 +161,7 @@ id tv_order_id
 id tv_preview
 id tv_price
 id tv_quantity
+id tv_rating
 id tv_reason
 id tv_status
 id tv_switch_to_login
@@ -170,6 +184,7 @@ layout fragment_admin_support_chat
 layout fragment_admin_support_tickets
 layout fragment_cart
 layout fragment_cart_list
+layout fragment_dish_detail
 layout fragment_edit_profile
 layout fragment_home
 layout fragment_login
@@ -190,8 +205,10 @@ layout item_admin_request
 layout item_admin_support_message
 layout item_admin_ticket
 layout item_cart
+layout item_category_section
 layout item_history_ticket
 layout item_menu
+layout item_menu_horizontal
 layout item_notification
 layout item_order
 layout item_support_message

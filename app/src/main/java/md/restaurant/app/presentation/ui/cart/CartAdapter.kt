@@ -1,4 +1,3 @@
-// presentation/ui/cart/CartAdapter.kt
 package md.restaurant.app.presentation.ui.cart
 
 import android.view.LayoutInflater
@@ -33,7 +32,7 @@ class CartAdapter(
                 if (cartItem.quantity > 1) {
                     cartItem.quantity--
                     etQuantity.setText(cartItem.quantity.toString())
-                    onQuantityChange(item._id, cartItem.quantity)
+                    onQuantityChange(item._id.orEmpty(), cartItem.quantity)
                 } else {
                     removeItem(position)
                 }
@@ -42,7 +41,7 @@ class CartAdapter(
             btnPlus.setOnClickListener {
                 cartItem.quantity++
                 etQuantity.setText(cartItem.quantity.toString())
-                onQuantityChange(item._id, cartItem.quantity)
+                onQuantityChange(item._id.orEmpty(), cartItem.quantity)
             }
 
             btnRemove.setOnClickListener {
@@ -51,9 +50,8 @@ class CartAdapter(
         }
     }
 
-    // ← МГНОВЕННОЕ УДАЛЕНИЕ!
     private fun removeItem(position: Int) {
-        val itemId = items[position].menuItem._id
+        val itemId = items[position].menuItem._id.orEmpty()
         items.removeAt(position)
         notifyItemRemoved(position)
         notifyItemRangeChanged(position, items.size)

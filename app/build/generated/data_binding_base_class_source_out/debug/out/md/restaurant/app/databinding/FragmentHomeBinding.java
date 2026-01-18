@@ -4,12 +4,15 @@ package md.restaurant.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -17,24 +20,42 @@ import md.restaurant.app.R;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final FrameLayout rootView;
 
   @NonNull
-  public final LinearLayout categoryContainer;
+  public final LinearLayout categoriesContainer;
 
   @NonNull
-  public final RecyclerView rvMenu;
+  public final LinearLayout categoryChipsContainer;
 
-  private FragmentHomeBinding(@NonNull LinearLayout rootView,
-      @NonNull LinearLayout categoryContainer, @NonNull RecyclerView rvMenu) {
+  @NonNull
+  public final FrameLayout dishDetailContainer;
+
+  @NonNull
+  public final NestedScrollView menuScroll;
+
+  @NonNull
+  public final TextInputEditText searchEditText;
+
+  @NonNull
+  public final TextInputLayout searchLayout;
+
+  private FragmentHomeBinding(@NonNull FrameLayout rootView,
+      @NonNull LinearLayout categoriesContainer, @NonNull LinearLayout categoryChipsContainer,
+      @NonNull FrameLayout dishDetailContainer, @NonNull NestedScrollView menuScroll,
+      @NonNull TextInputEditText searchEditText, @NonNull TextInputLayout searchLayout) {
     this.rootView = rootView;
-    this.categoryContainer = categoryContainer;
-    this.rvMenu = rvMenu;
+    this.categoriesContainer = categoriesContainer;
+    this.categoryChipsContainer = categoryChipsContainer;
+    this.dishDetailContainer = dishDetailContainer;
+    this.menuScroll = menuScroll;
+    this.searchEditText = searchEditText;
+    this.searchLayout = searchLayout;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public FrameLayout getRoot() {
     return rootView;
   }
 
@@ -59,19 +80,44 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.category_container;
-      LinearLayout categoryContainer = ViewBindings.findChildViewById(rootView, id);
-      if (categoryContainer == null) {
+      id = R.id.categories_container;
+      LinearLayout categoriesContainer = ViewBindings.findChildViewById(rootView, id);
+      if (categoriesContainer == null) {
         break missingId;
       }
 
-      id = R.id.rv_menu;
-      RecyclerView rvMenu = ViewBindings.findChildViewById(rootView, id);
-      if (rvMenu == null) {
+      id = R.id.category_chips_container;
+      LinearLayout categoryChipsContainer = ViewBindings.findChildViewById(rootView, id);
+      if (categoryChipsContainer == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((LinearLayout) rootView, categoryContainer, rvMenu);
+      id = R.id.dish_detail_container;
+      FrameLayout dishDetailContainer = ViewBindings.findChildViewById(rootView, id);
+      if (dishDetailContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.menu_scroll;
+      NestedScrollView menuScroll = ViewBindings.findChildViewById(rootView, id);
+      if (menuScroll == null) {
+        break missingId;
+      }
+
+      id = R.id.search_edit_text;
+      TextInputEditText searchEditText = ViewBindings.findChildViewById(rootView, id);
+      if (searchEditText == null) {
+        break missingId;
+      }
+
+      id = R.id.search_layout;
+      TextInputLayout searchLayout = ViewBindings.findChildViewById(rootView, id);
+      if (searchLayout == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((FrameLayout) rootView, categoriesContainer,
+          categoryChipsContainer, dishDetailContainer, menuScroll, searchEditText, searchLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

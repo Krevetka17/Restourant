@@ -28,12 +28,16 @@
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\ic_settings.xml"
     },
     {
-        "merged": "md.restaurant.app-debug-58:/layout_fragment_notification_list.xml.flat",
-        "source": "md.restaurant.app-main-60:/layout/fragment_notification_list.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_dish_detail.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_dish_detail.xml"
     },
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\menu_bottom_nav_menu.xml.flat",
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "md.restaurant.app-debug-58:/drawable_ic_search.xml.flat",
+        "source": "md.restaurant.app-main-60:/drawable/ic_search.xml"
     },
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_order.xml.flat",
@@ -50,6 +54,10 @@
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\drawable_bg_snackbar.xml.flat",
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\drawable\\bg_snackbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_menu_horizontal.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_menu_horizontal.xml"
     },
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_admin_ticket.xml.flat",
@@ -110,6 +118,10 @@
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_admin_support_tickets.xml.flat",
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_admin_support_tickets.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_category_section.xml.flat",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\item_category_section.xml"
     },
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_edit_profile.xml.flat",
@@ -306,6 +318,10 @@
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_fragment_support_specific_chat.xml.flat",
         "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-60:\\layout\\fragment_support_specific_chat.xml"
+    },
+    {
+        "merged": "md.restaurant.app-debug-58:/layout_fragment_home.xml.flat",
+        "source": "md.restaurant.app-main-60:/layout/fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-debug-58:\\layout_item_admin_request.xml.flat",
