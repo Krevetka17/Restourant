@@ -65,7 +65,7 @@ class AddCardFragment : Fragment() {
             if (clientSecret != null) {
                 paymentSheet.presentWithSetupIntent(clientSecret, config)
             } else {
-                Toast.makeText(context, "Ошибка создания SetupIntent", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Ошибка создания SetupIntent", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -79,8 +79,10 @@ class AddCardFragment : Fragment() {
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
+                    if (isAdded) {  // проверка, что фрагмент жив
+                        Toast.makeText(requireContext(), "Нет связи с сервером", Toast.LENGTH_SHORT).show()
+                    }
                     callback(null)
-                    Toast.makeText(context, "Нет связи с сервером", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -89,28 +91,38 @@ class AddCardFragment : Fragment() {
     private fun onPaymentSheetResult(result: PaymentSheetResult) {
         when (result) {
             is PaymentSheetResult.Completed -> {
-                Toast.makeText(context, "Карта добавлена!", Toast.LENGTH_SHORT).show()
+                if (isAdded) {
+                    Toast.makeText(requireContext(), "Карта добавлена!", Toast.LENGTH_SHORT).show()
+                }
 
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
-                        delay(3000) // даём Stripe время обработать
+                        delay(3000)
                         val freshUser = AuthApiClient.api.getCurrentUser()
                         withContext(Dispatchers.Main) {
-                            AuthManager.saveAuth(requireContext(), AuthManager.getToken(requireContext())!!, freshUser)
-                            parentFragmentManager.popBackStack()
+                            if (isAdded) {
+                                AuthManager.saveAuth(requireContext(), AuthManager.getToken(requireContext())!!, freshUser)
+                                parentFragmentManager.popBackStack()
+                            }
                         }
                     } catch (e: Exception) {
                         withContext(Dispatchers.Main) {
-                            Toast.makeText(context, "Не удалось обновить: ${e.message}", Toast.LENGTH_LONG).show()
+                            if (isAdded) {
+                                Toast.makeText(requireContext(), "Не удалось обновить список", Toast.LENGTH_SHORT).show()
+                            }
                         }
                     }
                 }
             }
             is PaymentSheetResult.Canceled -> {
-                Toast.makeText(context, "Отменено", Toast.LENGTH_SHORT).show()
+                if (isAdded) {
+                    Toast.makeText(requireContext(), "Отменено", Toast.LENGTH_SHORT).show()
+                }
             }
             is PaymentSheetResult.Failed -> {
-                Toast.makeText(context, "Ошибка: ${result.error.localizedMessage}", Toast.LENGTH_LONG).show()
+                if (isAdded) {
+                    Toast.makeText(requireContext(), "Ошибка: ${result.error.localizedMessage}", Toast.LENGTH_LONG).show()
+                }
             }
         }
     }
