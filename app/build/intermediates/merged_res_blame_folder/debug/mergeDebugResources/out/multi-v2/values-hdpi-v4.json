@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "md.restaurant.app-mergeDebugResources-56:/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "md.restaurant.app-mergeDebugResources-81:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\prost\\.gradle\\caches\\8.13\\transforms\\775ef8ac8f1ceea0e7bb16284ff79d20\\transformed\\appcompat-1.7.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
@@ -12,6 +12,24 @@
                         "endLines": "6",
                         "endColumns": "13",
                         "endOffsets": "327"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "119",
+                        "endLines": "7",
+                        "endColumns": "13",
+                        "endOffsets": "391"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\prost\\.gradle\\caches\\8.13\\transforms\\2edfd76529d58de97116ed5f5b03d5ee\\transformed\\payments-core-22.7.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
                     }
                 }
             ]

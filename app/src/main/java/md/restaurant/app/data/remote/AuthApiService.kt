@@ -1,14 +1,17 @@
 // Путь: app/src/main/java/md/restaurant/app/data/remote/AuthApiService.kt
 package md.restaurant.app.data.remote
 
+import SetupIntentResponse
 import md.restaurant.app.data.remote.dto.AuthResponse
 import md.restaurant.app.data.remote.dto.AuthRequest
 import md.restaurant.app.data.remote.dto.EditProfileRequestBody
 import md.restaurant.app.data.remote.dto.EditProfileRequestDto
 import md.restaurant.app.data.remote.dto.NotificationDto
+import md.restaurant.app.data.remote.dto.PaymentMethodsResponse
 import md.restaurant.app.data.remote.dto.RegisterRequest
 import md.restaurant.app.data.remote.dto.UserDto
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
@@ -30,5 +33,12 @@ interface AuthApiService {
     suspend fun getNotifications(): List<NotificationDto>
     @POST("notifications/{id}/read")
     suspend fun markAsRead(@Path("id") id: String): retrofit2.Response<Unit>
-
+    @POST("profile/payment-methods")
+    suspend fun addPaymentMethod(@Body body: Map<String, String>): PaymentMethodsResponse
+    @DELETE("profile/payment-methods/{cardId}")
+    suspend fun deletePaymentMethod(@Path("cardId") cardId: String): PaymentMethodsResponse
+    @POST("setup-intent")
+    suspend fun createSetupIntent(): SetupIntentResponse
+    @POST("confirm-setup")
+    suspend fun confirmSetup(@Body body: Map<String, String>): PaymentMethodsResponse
 }

@@ -84,6 +84,10 @@ class MainProfileFragment : Fragment() {
             (parentFragment as ProfileFragment).showLogin()
         }
 
+        binding.btnPaymentData.setOnClickListener {
+            (parentFragment as ProfileFragment).showPaymentData()
+        }
+
         binding.btnCopyId.setOnClickListener {
             val userId = AuthManager.getUser(requireContext())?.id ?: return@setOnClickListener
             val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager

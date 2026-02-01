@@ -10,6 +10,7 @@ drawable card_background
 drawable card_gradient
 drawable circle_gray
 drawable circle_white
+drawable edittext_rounded
 drawable food_placeholder
 drawable ic_add
 drawable ic_add_shopping_cart
@@ -20,6 +21,7 @@ drawable ic_cart
 drawable ic_check_circle
 drawable ic_copy
 drawable ic_default_user
+drawable ic_delete
 drawable ic_home
 drawable ic_language
 drawable ic_launcher_background
@@ -38,7 +40,9 @@ drawable ic_support_avatar
 drawable ic_underline_blue
 drawable nav_profile_selector
 drawable nav_profile_with_badge
+drawable ripple_gray
 drawable rounded_quantity_bg
+id add_card_container
 id appBar
 id bottom_navigation
 id btn_add_to_cart
@@ -53,6 +57,7 @@ id btn_checkout
 id btn_confirm
 id btn_confirm_order
 id btn_copy_id
+id btn_delete
 id btn_edit_profile
 id btn_login
 id btn_logout
@@ -69,6 +74,7 @@ id btn_reject
 id btn_remove
 id btn_requests
 id btn_save
+id btn_save_card
 id btn_send
 id btn_support
 id btn_support_tickets
@@ -117,6 +123,7 @@ id rb_pickup
 id rb_reserve
 id recycler_notifications
 id recycler_requests
+id rv_cards
 id rv_cart
 id rv_category_items
 id rv_history
@@ -144,6 +151,7 @@ id toolbar_payment
 id tv_address
 id tv_allergens
 id tv_calories
+id tv_card_number
 id tv_category
 id tv_category_title
 id tv_date
@@ -151,6 +159,8 @@ id tv_date_pickup
 id tv_date_reserve
 id tv_description
 id tv_empty
+id tv_expiry
+id tv_holder
 id tv_ingredients
 id tv_items
 id tv_message
@@ -177,6 +187,7 @@ id tv_user_id
 id tv_user_name
 id view_pager
 layout activity_main
+layout fragment_add_card
 layout fragment_admin_orders_list
 layout fragment_admin_panel
 layout fragment_admin_requests
@@ -193,6 +204,7 @@ layout fragment_my_orders
 layout fragment_notification_list
 layout fragment_notifications
 layout fragment_order_payment
+layout fragment_payment_data
 layout fragment_profile
 layout fragment_register
 layout fragment_settings
@@ -211,6 +223,7 @@ layout item_menu
 layout item_menu_horizontal
 layout item_notification
 layout item_order
+layout item_payment_card
 layout item_support_message
 layout snackbar_custom
 menu bottom_nav_menu

@@ -22,6 +22,7 @@ import md.restaurant.app.presentation.ui.profile.main.MainProfileFragment
 import md.restaurant.app.presentation.ui.profile.notifications.NotificationListFragment
 import md.restaurant.app.presentation.ui.profile.notifications.NotificationsFragment
 import md.restaurant.app.presentation.ui.profile.orders.MyOrdersFragment
+import md.restaurant.app.presentation.ui.profile.payment.PaymentDataFragment
 import md.restaurant.app.presentation.ui.profile.register.RegisterFragment
 import md.restaurant.app.utils.AuthManager
 import retrofit2.Retrofit
@@ -145,6 +146,13 @@ class ProfileFragment : Fragment() {
                     }
                 }
             }
+        }
+    }
+
+    fun showPaymentData() {
+        childFragmentManager.commit {
+            replace(R.id.profile_container, PaymentDataFragment())
+            addToBackStack("payment_data")
         }
     }
 

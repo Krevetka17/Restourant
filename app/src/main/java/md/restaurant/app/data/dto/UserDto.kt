@@ -7,5 +7,7 @@ data class UserDto(
     val email: String,
     val phone: String? = null,
     val isAdmin: Boolean = false,
-    @SerializedName("avatar") val avatar: String? = null
+    @SerializedName("avatar") val avatar: String? = null,
+    val paymentMethods: List<PaymentMethodDto>? = null,
+    val stripeCustomerId: String? = null,
 )
