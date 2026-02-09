@@ -18,5 +18,6 @@ data class AdminOrder(
     val endTime: String?,
     val status: String = "new",
     val rejectionReason: String? = null,
-    val items: List<AdminOrderItem>
+    val items: List<AdminOrderItem>,
+    val paid: Boolean = false
 )

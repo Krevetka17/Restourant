@@ -1,4 +1,4 @@
-#Mon Feb 09 14:55:23 EET 2026
+#Mon Feb 09 15:02:33 EET 2026
 base.0=D\:\\AndStudioProject\\Restaurant\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=D\:\\AndStudioProject\\Restaurant\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.10=D\:\\AndStudioProject\\Restaurant\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex

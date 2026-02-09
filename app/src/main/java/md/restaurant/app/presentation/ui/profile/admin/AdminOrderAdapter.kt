@@ -49,8 +49,13 @@ class AdminOrderViewHolder(private val binding: ItemAdminOrderBinding) : Recycle
         binding.tvOrderId.text = "Заказ №${order._id.takeLast(6)}"
         binding.tvTotal.text = "Сумма: ${order.total} MDL"
 
+        // Показ оплаты
+        binding.tvType.text = if (order.paid) "Оплачено онлайн" else "Не оплачено"
+        binding.tvType.setTextColor(
+            if (order.paid) 0xFF4CAF50.toInt() else 0xFFF44336.toInt()
+        )
+
         if (order.delivery) {
-            binding.tvType.text = "Тип: Доставка"
             binding.tvType.visibility = View.VISIBLE
             binding.tvAddress.visibility = View.VISIBLE
             binding.tvAddress.text = "Адрес: ${order.address ?: "Не указан"}"
@@ -58,7 +63,6 @@ class AdminOrderViewHolder(private val binding: ItemAdminOrderBinding) : Recycle
             binding.tvTime.visibility = View.GONE
             binding.tvTable.visibility = View.GONE
         } else if (order.tableNumber != null) {
-            binding.tvType.text = "Тип: Бронь столика"
             binding.tvType.visibility = View.VISIBLE
             binding.tvAddress.visibility = View.GONE
 
@@ -77,7 +81,6 @@ class AdminOrderViewHolder(private val binding: ItemAdminOrderBinding) : Recycle
             binding.tvTable.visibility = View.VISIBLE
             binding.tvTable.text = "Столик: ${order.tableNumber}"
         } else {
-            binding.tvType.text = "Тип: Самовывоз"
             binding.tvType.visibility = View.VISIBLE
             binding.tvAddress.visibility = View.GONE
 
