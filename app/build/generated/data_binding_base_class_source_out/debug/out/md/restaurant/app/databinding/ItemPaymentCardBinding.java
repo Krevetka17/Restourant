@@ -24,6 +24,9 @@ public final class ItemPaymentCardBinding implements ViewBinding {
   public final ImageButton btnDelete;
 
   @NonNull
+  public final CardView cardRoot;
+
+  @NonNull
   public final TextView tvCardNumber;
 
   @NonNull
@@ -33,9 +36,11 @@ public final class ItemPaymentCardBinding implements ViewBinding {
   public final TextView tvHolder;
 
   private ItemPaymentCardBinding(@NonNull CardView rootView, @NonNull ImageButton btnDelete,
-      @NonNull TextView tvCardNumber, @NonNull TextView tvExpiry, @NonNull TextView tvHolder) {
+      @NonNull CardView cardRoot, @NonNull TextView tvCardNumber, @NonNull TextView tvExpiry,
+      @NonNull TextView tvHolder) {
     this.rootView = rootView;
     this.btnDelete = btnDelete;
+    this.cardRoot = cardRoot;
     this.tvCardNumber = tvCardNumber;
     this.tvExpiry = tvExpiry;
     this.tvHolder = tvHolder;
@@ -74,6 +79,8 @@ public final class ItemPaymentCardBinding implements ViewBinding {
         break missingId;
       }
 
+      CardView cardRoot = (CardView) rootView;
+
       id = R.id.tv_card_number;
       TextView tvCardNumber = ViewBindings.findChildViewById(rootView, id);
       if (tvCardNumber == null) {
@@ -92,8 +99,8 @@ public final class ItemPaymentCardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemPaymentCardBinding((CardView) rootView, btnDelete, tvCardNumber, tvExpiry,
-          tvHolder);
+      return new ItemPaymentCardBinding((CardView) rootView, btnDelete, cardRoot, tvCardNumber,
+          tvExpiry, tvHolder);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

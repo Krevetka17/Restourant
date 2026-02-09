@@ -1,6 +1,7 @@
 package md.restaurant.app.presentation.ui.order
 
 import android.Manifest
+import android.app.AlertDialog
 import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.os.Bundle
@@ -11,12 +12,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -31,11 +35,12 @@ import md.restaurant.app.R
 import md.restaurant.app.databinding.FragmentOrderPaymentBinding
 import md.restaurant.app.utils.CartManager
 import md.restaurant.app.utils.AuthManager
+import md.restaurant.app.data.remote.AuthApiClient
 import md.restaurant.app.data.remote.dto.CartItemRequest
 import md.restaurant.app.data.remote.dto.CreateOrderRequest
 import md.restaurant.app.data.remote.order.OrderApiClient
 import md.restaurant.app.presentation.ui.cart.CartFragment
-import md.restaurant.app.presentation.ui.profile.ProfileFragment
+import md.restaurant.app.presentation.ui.profile.payment.PaymentMethodsAdapter
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -43,9 +48,12 @@ import java.util.Locale
 class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.OnDateSetListener {
 
     private var _binding: FragmentOrderPaymentBinding? = null
-    private val binding get() = _binding!!
+    val binding get() = _binding!!
 
     private var orderType = "delivery"
+    private var paymentMethod = "cash"
+    private var selectedOnlineCardId: String? = null
+
     private var googleMap: GoogleMap? = null
     private var selectedStartTime: String? = null
     private var selectedEndTime: String? = null
@@ -54,10 +62,12 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
 
     private lateinit var timeList: List<String>
 
-    private var selectedDate: String? = null // yyyy-MM-dd
+    private var selectedDate: String? = null
     private var selectedDateDisplay: String = ""
 
     private lateinit var locationPermissionLauncher: ActivityResultLauncher<String>
+
+    private lateinit var cardsAdapter: PaymentMethodsAdapter
 
     private val dayOfWeekFormat = SimpleDateFormat("EEE", Locale("ru"))
     private val dayMonthFormat = SimpleDateFormat("dd MMMM", Locale("ru"))
@@ -91,16 +101,58 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
         updateDateText()
 
         setupTypeToggle()
+        setupPaymentToggle()
         setupTimeSpinners()
         setupDatePicker()
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
+        cardsAdapter = PaymentMethodsAdapter(
+            onSelect = { newId ->
+                selectedOnlineCardId = newId
+                cardsAdapter.updateSelected(newId)
+            },
+            onDelete = { cardId ->
+                AlertDialog.Builder(requireContext())
+                    .setTitle("Удалить карту")
+                    .setMessage("Точно?")
+                    .setPositiveButton("Да") { _, _ ->
+                        lifecycleScope.launch {
+                            try {
+                                val resp = AuthApiClient.api.deletePaymentMethod(cardId)
+                                if (resp.success) {
+                                    loadCards()
+                                    if (selectedOnlineCardId == cardId) selectedOnlineCardId = null
+                                    Toast.makeText(context, "Удалено", Toast.LENGTH_SHORT).show()
+                                }
+                            } catch (e: Exception) {
+                                Toast.makeText(context, "Ошибка", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                    .setNegativeButton("Нет", null)
+                    .show()
+            },
+            selectedId = selectedOnlineCardId
+        )
+
+        binding.rvCards.layoutManager = LinearLayoutManager(context)
+        binding.rvCards.adapter = cardsAdapter
+        binding.rvCards.isNestedScrollingEnabled = false
+
+        binding.addCardContainer.setOnClickListener {
+            binding.addCardContainerFragment.visibility = View.VISIBLE
+            childFragmentManager.commit {
+                replace(R.id.add_card_container_fragment, md.restaurant.app.presentation.ui.profile.payment.AddCardFragment())
+                addToBackStack("add_card")
+            }
+        }
+
         binding.btnConfirmOrder.setOnClickListener { confirmOrder() }
 
         binding.btnBack.setOnClickListener {
-            (parentFragment as CartFragment).showCartList()
+            (parentFragment as? CartFragment)?.showCartList()
         }
 
         binding.etAddress.addTextChangedListener(object : TextWatcher {
@@ -111,10 +163,50 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
                 if (query.isNotEmpty() && orderType == "delivery") searchLocationOnMap(query)
             }
         })
+
+        loadCards()
+    }
+
+    fun loadCards() {
+        lifecycleScope.launch {
+            try {
+                val user = AuthApiClient.api.getCurrentUser()
+                AuthManager.saveAuth(requireContext(), AuthManager.getToken(requireContext())!!, user)
+                val cards = user.paymentMethods ?: emptyList()
+                cardsAdapter.submitList(cards)
+                binding.rvCards.visibility = if (cards.isEmpty()) View.GONE else View.VISIBLE
+            } catch (_: Exception) {
+                binding.rvCards.visibility = View.GONE
+            }
+        }
+    }
+
+    private fun setupPaymentToggle() {
+        binding.radioGroupPayment.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.rb_cash -> {
+                    paymentMethod = "cash"
+                    binding.llOnlinePaymentCards.visibility = View.GONE
+                    selectedOnlineCardId = null
+                }
+                R.id.rb_card_on_delivery -> {
+                    paymentMethod = "card_on_delivery"
+                    binding.llOnlinePaymentCards.visibility = View.GONE
+                    selectedOnlineCardId = null
+                }
+                R.id.rb_online -> {
+                    paymentMethod = "online"
+                    binding.llOnlinePaymentCards.visibility = View.VISIBLE
+                    if (cardsAdapter.currentList.isEmpty()) {
+                        Snackbar.make(binding.root, "Добавьте карту для оплаты онлайн", Snackbar.LENGTH_LONG).show()
+                    }
+                }
+            }
+        }
     }
 
     private fun formatDisplayDate(cal: Calendar): String {
-        val dayOfWeek = dayOfWeekFormat.format(cal.time).capitalize()
+        val dayOfWeek = dayOfWeekFormat.format(cal.time).replaceFirstChar { it.uppercase() }
         val dayMonth = dayMonthFormat.format(cal.time)
         return "$dayOfWeek $dayMonth"
     }
@@ -215,7 +307,7 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
 
         binding.spinnerEndTime.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                selectedEndTime = (binding.spinnerEndTime.adapter.getItem(position) as String)
+                selectedEndTime = binding.spinnerEndTime.adapter.getItem(position) as String
                 if (selectedStartTime != null && selectedDate != null && selectedEndTime != null) {
                     loadAvailableTables(selectedStartTime!!, selectedEndTime!!)
                 }
@@ -365,7 +457,7 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
         val context = requireContext()
         val cart = CartManager.getCart(context)
         if (cart.isEmpty()) {
-            (parentFragment as CartFragment).showCartList()
+            (parentFragment as? CartFragment)?.showCartList()
             return
         }
 
@@ -378,42 +470,28 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
         val name = binding.etName.text.toString().trim()
         val phone = binding.etPhone.text.toString().trim()
 
-        if (name.isEmpty()) {
-            binding.tilName.error = "Введите имя"
-            hasError = true
-        }
-        if (phone.isEmpty()) {
-            binding.tilPhone.error = "Введите телефон"
-            hasError = true
-        }
+        if (name.isEmpty()) { binding.tilName.error = "Введите имя"; hasError = true }
+        if (phone.isEmpty()) { binding.tilPhone.error = "Введите телефон"; hasError = true }
 
         if (orderType == "delivery") {
             val address = binding.etAddress.text.toString().trim()
-            if (address.isEmpty()) {
-                binding.tilAddress.error = "Введите адрес"
-                hasError = true
-            }
+            if (address.isEmpty()) { binding.tilAddress.error = "Введите адрес"; hasError = true }
         } else {
-            if (selectedStartTime == null) {
-                Snackbar.make(binding.root, "Выберите время прихода", Snackbar.LENGTH_SHORT).show()
-                hasError = true
-            }
+            if (selectedStartTime == null) { Snackbar.make(binding.root, "Выберите время прихода", Snackbar.LENGTH_SHORT).show(); hasError = true }
             if (orderType == "reserve") {
-                if (selectedEndTime == null) {
-                    Snackbar.make(binding.root, "Выберите время ухода", Snackbar.LENGTH_SHORT).show()
-                    hasError = true
-                }
-                if (selectedTable == null) {
-                    Snackbar.make(binding.root, "Выберите столик", Snackbar.LENGTH_SHORT).show()
-                    hasError = true
-                }
+                if (selectedEndTime == null) { Snackbar.make(binding.root, "Выберите время ухода", Snackbar.LENGTH_SHORT).show(); hasError = true }
+                if (selectedTable == null) { Snackbar.make(binding.root, "Выберите столик", Snackbar.LENGTH_SHORT).show(); hasError = true }
             }
+        }
+
+        if (paymentMethod == "online" && selectedOnlineCardId == null) {
+            Snackbar.make(binding.root, "Выберите карту для онлайн-оплаты", Snackbar.LENGTH_SHORT).show()
+            hasError = true
         }
 
         if (hasError) return
 
-        val userId = AuthManager.getUser(context)?.id
-        if (userId == null) {
+        val userId = AuthManager.getUser(context)?.id ?: run {
             Snackbar.make(binding.root, "Ошибка авторизации", Snackbar.LENGTH_SHORT).show()
             return
         }
@@ -437,23 +515,41 @@ class OrderPaymentFragment : Fragment(), OnMapReadyCallback, DatePickerDialog.On
             tableNumber = if (orderType == "reserve") selectedTable else null,
             reservationDate = if (orderType != "delivery") selectedDate else null,
             startTime = if (orderType != "delivery") selectedStartTime else null,
-            endTime = if (orderType != "delivery") finalEndTime else null
+            endTime = if (orderType != "delivery") finalEndTime else null,
+            paymentMethod = paymentMethod,
+            paymentMethodId = if (paymentMethod == "online") selectedOnlineCardId else null
         )
 
         viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val response = OrderApiClient.api.createOrder(request)
+
                 if (response.success) {
                     CartManager.clearCart(context)
-                    Snackbar.make(binding.root, "Ожидайте звонка администрации для подтверждения заказа", Snackbar.LENGTH_LONG).show()
+
+                    if (paymentMethod == "online") {
+                        // Оплата прошла (сервер уже проверил и создал оплаченный заказ)
+                        try {
+                            AuthApiClient.api.notifyAdminAboutPayment(
+                                mapOf(
+                                    "orderId" to response.orderId.toString(),
+                                    "message" to "Оплата онлайн прошла успешно для заказа №${response.orderId}"
+                                )
+                            )
+                            Snackbar.make(binding.root, "Заказ оплачен онлайн и отправлен в обработку", Snackbar.LENGTH_LONG).show()
+                        } catch (e: Exception) {
+                            Snackbar.make(binding.root, "Заказ создан, но уведомление админу не отправлено", Snackbar.LENGTH_LONG).show()
+                        }
+                    } else {
+                        Snackbar.make(binding.root, "Заказ успешно оформлен!", Snackbar.LENGTH_LONG).show()
+                    }
 
                     parentFragmentManager.popBackStack()
-                    (parentFragment?.parentFragment as? ProfileFragment)?.showMyOrders()
                 } else {
-                    Snackbar.make(binding.root, "Ошибка оформления", Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(binding.root, "Ошибка оформления заказа", Snackbar.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
-                Snackbar.make(binding.root, "Нет связи", Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(binding.root, "Нет связи с сервером", Snackbar.LENGTH_SHORT).show()
             }
         }
     }
@@ -495,9 +591,7 @@ class TableAdapter(
         holder.tv.setTextColor(
             if (table == selected) android.graphics.Color.WHITE else android.graphics.Color.BLACK
         )
-        holder.itemView.setOnClickListener {
-            onClick(table)
-        }
+        holder.itemView.setOnClickListener { onClick(table) }
     }
 
     override fun getItemCount() = tables.size

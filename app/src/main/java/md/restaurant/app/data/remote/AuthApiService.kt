@@ -35,10 +35,12 @@ interface AuthApiService {
     suspend fun markAsRead(@Path("id") id: String): retrofit2.Response<Unit>
     @POST("profile/payment-methods")
     suspend fun addPaymentMethod(@Body body: Map<String, String>): PaymentMethodsResponse
-    @DELETE("profile/payment-methods/{cardId}")
-    suspend fun deletePaymentMethod(@Path("cardId") cardId: String): PaymentMethodsResponse
+    @DELETE("payment-methods/{pmId}")
+    suspend fun deletePaymentMethod(@Path("pmId") pmId: String): PaymentMethodsResponse
     @POST("setup-intent")
     suspend fun createSetupIntent(): SetupIntentResponse
     @POST("confirm-setup")
     suspend fun confirmSetup(@Body body: Map<String, String>): PaymentMethodsResponse
+    @POST("notify-admin-payment")
+    suspend fun notifyAdminAboutPayment(@Body body: Map<String, String>): Any
 }

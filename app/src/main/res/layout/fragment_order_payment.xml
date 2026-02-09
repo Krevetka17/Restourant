@@ -33,7 +33,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -224,13 +225,14 @@
                     android:inputType="phone" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Блок оплаты (скрывается в reserve) -->
+            <!-- Блок оплаты -->
             <LinearLayout
                 android:id="@+id/ll_payment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="24dp">
+                android:layout_marginTop="24dp"
+                android:visibility="visible">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -252,11 +254,63 @@
                         android:checked="true" />
 
                     <com.google.android.material.radiobutton.MaterialRadioButton
-                        android:id="@+id/rb_card"
+                        android:id="@+id/rb_card_on_delivery"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Картой при получении" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rb_online"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Оплата онлайн" />
                 </RadioGroup>
+
+                <!-- Список карт -->
+                <LinearLayout
+                    android:id="@+id/ll_online_payment_cards"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/add_card_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/ripple_gray"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:src="@android:drawable/ic_input_add"
+                            android:background="@drawable/circle_gray"
+                            android:padding="12dp"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Добавить банковскую карту"
+                            android:textSize="18sp"
+                            android:textColor="#333333"
+                            android:layout_marginStart="16dp" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_cards"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:nestedScrollingEnabled="false" />
+                </LinearLayout>
             </LinearLayout>
 
             <TextView
@@ -278,4 +332,13 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <!-- Контейнер для AddCardFragment — поверх всего, вне ScrollView -->
+    <FrameLayout
+        android:id="@+id/add_card_container_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@android:color/white" />
+
 </LinearLayout>

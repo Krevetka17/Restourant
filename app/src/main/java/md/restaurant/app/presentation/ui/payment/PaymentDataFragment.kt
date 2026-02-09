@@ -38,7 +38,10 @@ class PaymentDataFragment : Fragment() {
 
         binding.btnBack.setOnClickListener { parentFragmentManager.popBackStack() }
 
-        adapter = PaymentMethodsAdapter { cardId -> showDeleteConfirmation(cardId) }
+        adapter = PaymentMethodsAdapter(
+            onSelect = { _ -> /* в профиле не нужно менять выбор */ },
+            onDelete = { cardId -> showDeleteConfirmation(cardId) }
+        )
         binding.rvCards.layoutManager = LinearLayoutManager(context)
         binding.rvCards.adapter = adapter
 
@@ -52,7 +55,7 @@ class PaymentDataFragment : Fragment() {
     private fun loadCards() {
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                val freshUser = AuthApiClient.api.getCurrentUser()  // ← свежий запрос
+                val freshUser = AuthApiClient.api.getCurrentUser()
                 AuthManager.saveAuth(requireContext(), AuthManager.getToken(requireContext())!!, freshUser)
                 val cards = freshUser.paymentMethods ?: emptyList()
                 adapter.submitList(cards)

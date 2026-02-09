@@ -1,162 +1,166 @@
 [
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_admin_request.xml",
-        "source": "md.restaurant.app-main-85:/layout/item_admin_request.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_cart.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_cart.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_login.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_login.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_support_history.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_support_history.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_cart.xml",
-        "source": "md.restaurant.app-main-85:/layout/item_cart.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_admin_ticket.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_admin_ticket.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_main_profile.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_main_profile.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_admin_order.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_admin_order.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_support_message.xml",
-        "source": "md.restaurant.app-main-85:/layout/item_support_message.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_edit_profile.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_edit_profile.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_notifications.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_notifications.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_admin_support_message.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_admin_support_message.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_category_section.xml",
-        "source": "md.restaurant.app-main-85:/layout/item_category_section.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_order_payment.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_order_payment.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_support_chat.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_support_chat.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_admin_support_tickets.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_admin_support_tickets.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_menu_horizontal.xml",
-        "source": "md.restaurant.app-main-85:/layout/item_menu_horizontal.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_my_orders.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_my_orders.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_home.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_home.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_main_profile.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_main_profile.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_dish_detail.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_dish_detail.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_category_section.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_category_section.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_admin_order.xml",
-        "source": "md.restaurant.app-main-85:/layout/item_admin_order.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_history_ticket.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_history_ticket.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_settings_container.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_settings_container.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_admin_panel.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_admin_panel.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_history_ticket.xml",
-        "source": "md.restaurant.app-main-85:/layout/item_history_ticket.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_dish_detail.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_dish_detail.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_menu.xml",
-        "source": "md.restaurant.app-main-85:/layout/item_menu.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_settings.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_settings.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_order_payment.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_order_payment.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_support_message.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_support_message.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_edit_profile.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_edit_profile.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_cart.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_cart.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_settings.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_settings.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_login.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_login.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_admin_requests.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_admin_requests.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_add_card.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_add_card.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_my_orders.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_my_orders.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_notification.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_notification.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_support_specific_chat.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_support_specific_chat.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_support_chat.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_support_chat.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_register.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_register.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_cart_list.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_cart_list.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_admin_support_message.xml",
-        "source": "md.restaurant.app-main-85:/layout/item_admin_support_message.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_payment_card.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_payment_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\activity_main.xml"
     },
     {
         "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_payment_card.xml",
         "source": "md.restaurant.app-main-85:/layout/item_payment_card.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_notification_list.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_notification_list.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_menu.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_menu.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_admin_support_chat.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_admin_support_chat.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\snackbar_custom.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\snackbar_custom.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/activity_main.xml",
-        "source": "md.restaurant.app-main-85:/layout/activity_main.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_settings_container.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_settings_container.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_payment_data.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_payment_data.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_admin_requests.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_admin_requests.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_admin_support_tickets.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_admin_support_tickets.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_admin_request.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_admin_request.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_admin_ticket.xml",
-        "source": "md.restaurant.app-main-85:/layout/item_admin_ticket.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_notification_list.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_notification_list.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_notification.xml",
-        "source": "md.restaurant.app-main-85:/layout/item_notification.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_admin_orders_list.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_admin_orders_list.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/snackbar_custom.xml",
-        "source": "md.restaurant.app-main-85:/layout/snackbar_custom.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_menu_horizontal.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_menu_horizontal.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_cart_list.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_cart_list.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\item_order.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\item_order.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_profile.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_profile.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_add_card.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_add_card.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_register.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_register.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_admin_orders_list.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_admin_orders_list.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_payment_data.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_payment_data.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_admin_panel.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_admin_panel.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_support_specific_chat.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_support_specific_chat.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/item_order.xml",
-        "source": "md.restaurant.app-main-85:/layout/item_order.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_admin_support_chat.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_admin_support_chat.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_support_history.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_support_history.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_notifications.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_notifications.xml"
     },
     {
-        "merged": "md.restaurant.app-mergeDebugResources-82:/layout/fragment_cart.xml",
-        "source": "md.restaurant.app-main-85:/layout/fragment_cart.xml"
+        "merged": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-mergeDebugResources-82:\\layout\\fragment_profile.xml",
+        "source": "C:\\Users\\prost\\.gradle\\daemon\\8.13\\md.restaurant.app-main-85:\\layout\\fragment_profile.xml"
     }
 ]

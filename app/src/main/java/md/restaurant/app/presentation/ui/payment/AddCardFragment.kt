@@ -16,6 +16,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import md.restaurant.app.data.remote.AuthApiClient
 import md.restaurant.app.databinding.FragmentAddCardBinding
+import md.restaurant.app.presentation.ui.order.OrderPaymentFragment
 import md.restaurant.app.utils.AuthManager
 
 class AddCardFragment : Fragment() {
@@ -79,7 +80,7 @@ class AddCardFragment : Fragment() {
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
-                    if (isAdded) {  // проверка, что фрагмент жив
+                    if (isAdded) {
                         Toast.makeText(requireContext(), "Нет связи с сервером", Toast.LENGTH_SHORT).show()
                     }
                     callback(null)
@@ -102,6 +103,13 @@ class AddCardFragment : Fragment() {
                         withContext(Dispatchers.Main) {
                             if (isAdded) {
                                 AuthManager.saveAuth(requireContext(), AuthManager.getToken(requireContext())!!, freshUser)
+
+                                // ← Добавь это
+                                (parentFragment as? OrderPaymentFragment)?.let { orderFrag ->
+                                    orderFrag.binding.addCardContainerFragment.visibility = View.GONE
+                                    orderFrag.loadCards()  // перезагрузить список карт
+                                }
+
                                 parentFragmentManager.popBackStack()
                             }
                         }

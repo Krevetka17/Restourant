@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
@@ -29,6 +30,12 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final LinearLayout addCardContainer;
+
+  @NonNull
+  public final FrameLayout addCardContainerFragment;
+
+  @NonNull
   public final ImageButton btnBack;
 
   @NonNull
@@ -47,6 +54,9 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
   public final LinearLayout llDelivery;
 
   @NonNull
+  public final LinearLayout llOnlinePaymentCards;
+
+  @NonNull
   public final LinearLayout llPayment;
 
   @NonNull
@@ -62,7 +72,7 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
   public final RadioGroup radioGroupType;
 
   @NonNull
-  public final MaterialRadioButton rbCard;
+  public final MaterialRadioButton rbCardOnDelivery;
 
   @NonNull
   public final MaterialRadioButton rbCash;
@@ -71,10 +81,16 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
   public final MaterialRadioButton rbDelivery;
 
   @NonNull
+  public final MaterialRadioButton rbOnline;
+
+  @NonNull
   public final MaterialRadioButton rbPickup;
 
   @NonNull
   public final MaterialRadioButton rbReserve;
+
+  @NonNull
+  public final RecyclerView rvCards;
 
   @NonNull
   public final RecyclerView rvTables;
@@ -109,37 +125,45 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
   @NonNull
   public final TextView tvTotal;
 
-  private FragmentOrderPaymentBinding(@NonNull LinearLayout rootView, @NonNull ImageButton btnBack,
-      @NonNull Button btnConfirmOrder, @NonNull TextInputEditText etAddress,
-      @NonNull TextInputEditText etName, @NonNull TextInputEditText etPhone,
-      @NonNull LinearLayout llDelivery, @NonNull LinearLayout llPayment,
+  private FragmentOrderPaymentBinding(@NonNull LinearLayout rootView,
+      @NonNull LinearLayout addCardContainer, @NonNull FrameLayout addCardContainerFragment,
+      @NonNull ImageButton btnBack, @NonNull Button btnConfirmOrder,
+      @NonNull TextInputEditText etAddress, @NonNull TextInputEditText etName,
+      @NonNull TextInputEditText etPhone, @NonNull LinearLayout llDelivery,
+      @NonNull LinearLayout llOnlinePaymentCards, @NonNull LinearLayout llPayment,
       @NonNull LinearLayout llPickup, @NonNull LinearLayout llReserve,
       @NonNull RadioGroup radioGroupPayment, @NonNull RadioGroup radioGroupType,
-      @NonNull MaterialRadioButton rbCard, @NonNull MaterialRadioButton rbCash,
-      @NonNull MaterialRadioButton rbDelivery, @NonNull MaterialRadioButton rbPickup,
-      @NonNull MaterialRadioButton rbReserve, @NonNull RecyclerView rvTables,
+      @NonNull MaterialRadioButton rbCardOnDelivery, @NonNull MaterialRadioButton rbCash,
+      @NonNull MaterialRadioButton rbDelivery, @NonNull MaterialRadioButton rbOnline,
+      @NonNull MaterialRadioButton rbPickup, @NonNull MaterialRadioButton rbReserve,
+      @NonNull RecyclerView rvCards, @NonNull RecyclerView rvTables,
       @NonNull Spinner spinnerEndTime, @NonNull Spinner spinnerStartTime,
       @NonNull Spinner spinnerTime, @NonNull TextInputLayout tilAddress,
       @NonNull TextInputLayout tilName, @NonNull TextInputLayout tilPhone,
       @NonNull Toolbar toolbarPayment, @NonNull TextView tvDatePickup,
       @NonNull TextView tvDateReserve, @NonNull TextView tvTotal) {
     this.rootView = rootView;
+    this.addCardContainer = addCardContainer;
+    this.addCardContainerFragment = addCardContainerFragment;
     this.btnBack = btnBack;
     this.btnConfirmOrder = btnConfirmOrder;
     this.etAddress = etAddress;
     this.etName = etName;
     this.etPhone = etPhone;
     this.llDelivery = llDelivery;
+    this.llOnlinePaymentCards = llOnlinePaymentCards;
     this.llPayment = llPayment;
     this.llPickup = llPickup;
     this.llReserve = llReserve;
     this.radioGroupPayment = radioGroupPayment;
     this.radioGroupType = radioGroupType;
-    this.rbCard = rbCard;
+    this.rbCardOnDelivery = rbCardOnDelivery;
     this.rbCash = rbCash;
     this.rbDelivery = rbDelivery;
+    this.rbOnline = rbOnline;
     this.rbPickup = rbPickup;
     this.rbReserve = rbReserve;
+    this.rvCards = rvCards;
     this.rvTables = rvTables;
     this.spinnerEndTime = spinnerEndTime;
     this.spinnerStartTime = spinnerStartTime;
@@ -180,6 +204,18 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.add_card_container;
+      LinearLayout addCardContainer = ViewBindings.findChildViewById(rootView, id);
+      if (addCardContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.add_card_container_fragment;
+      FrameLayout addCardContainerFragment = ViewBindings.findChildViewById(rootView, id);
+      if (addCardContainerFragment == null) {
+        break missingId;
+      }
+
       id = R.id.btn_back;
       ImageButton btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
@@ -216,6 +252,12 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ll_online_payment_cards;
+      LinearLayout llOnlinePaymentCards = ViewBindings.findChildViewById(rootView, id);
+      if (llOnlinePaymentCards == null) {
+        break missingId;
+      }
+
       id = R.id.ll_payment;
       LinearLayout llPayment = ViewBindings.findChildViewById(rootView, id);
       if (llPayment == null) {
@@ -246,9 +288,9 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.rb_card;
-      MaterialRadioButton rbCard = ViewBindings.findChildViewById(rootView, id);
-      if (rbCard == null) {
+      id = R.id.rb_card_on_delivery;
+      MaterialRadioButton rbCardOnDelivery = ViewBindings.findChildViewById(rootView, id);
+      if (rbCardOnDelivery == null) {
         break missingId;
       }
 
@@ -264,6 +306,12 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.rb_online;
+      MaterialRadioButton rbOnline = ViewBindings.findChildViewById(rootView, id);
+      if (rbOnline == null) {
+        break missingId;
+      }
+
       id = R.id.rb_pickup;
       MaterialRadioButton rbPickup = ViewBindings.findChildViewById(rootView, id);
       if (rbPickup == null) {
@@ -273,6 +321,12 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
       id = R.id.rb_reserve;
       MaterialRadioButton rbReserve = ViewBindings.findChildViewById(rootView, id);
       if (rbReserve == null) {
+        break missingId;
+      }
+
+      id = R.id.rv_cards;
+      RecyclerView rvCards = ViewBindings.findChildViewById(rootView, id);
+      if (rvCards == null) {
         break missingId;
       }
 
@@ -342,11 +396,12 @@ public final class FragmentOrderPaymentBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentOrderPaymentBinding((LinearLayout) rootView, btnBack, btnConfirmOrder,
-          etAddress, etName, etPhone, llDelivery, llPayment, llPickup, llReserve, radioGroupPayment,
-          radioGroupType, rbCard, rbCash, rbDelivery, rbPickup, rbReserve, rvTables, spinnerEndTime,
-          spinnerStartTime, spinnerTime, tilAddress, tilName, tilPhone, toolbarPayment,
-          tvDatePickup, tvDateReserve, tvTotal);
+      return new FragmentOrderPaymentBinding((LinearLayout) rootView, addCardContainer,
+          addCardContainerFragment, btnBack, btnConfirmOrder, etAddress, etName, etPhone,
+          llDelivery, llOnlinePaymentCards, llPayment, llPickup, llReserve, radioGroupPayment,
+          radioGroupType, rbCardOnDelivery, rbCash, rbDelivery, rbOnline, rbPickup, rbReserve,
+          rvCards, rvTables, spinnerEndTime, spinnerStartTime, spinnerTime, tilAddress, tilName,
+          tilPhone, toolbarPayment, tvDatePickup, tvDateReserve, tvTotal);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

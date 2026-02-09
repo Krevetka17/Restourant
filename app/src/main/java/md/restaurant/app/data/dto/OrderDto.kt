@@ -9,7 +9,9 @@ data class CreateOrderRequest(
     val tableNumber: Int? = null,
     val reservationDate: String? = null,
     val startTime: String? = null,
-    val endTime: String? = null
+    val endTime: String? = null,
+    val paymentMethod: String? = null,
+    val paymentMethodId: String? = null
 )
 
 data class CartItemRequest(

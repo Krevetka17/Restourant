@@ -3455,6 +3455,9 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable card_background
 drawable card_gradient
+drawable card_grayed_bg
+drawable card_normal_bg
+drawable card_selected_bg
 drawable circle_gray
 drawable circle_white
 drawable common_full_open_on_phone
@@ -3914,6 +3917,7 @@ id actions
 id activity_chooser_view_content
 id add
 id add_card_container
+id add_card_container_fragment
 id add_payment_method_card
 id adjust_height
 id adjust_width
@@ -4022,6 +4026,7 @@ id card_multiline_widget_container
 id card_number_edit_text
 id card_number_input_container
 id card_number_text_input_layout
+id card_root
 id carryVelocity
 id cartFragment
 id cart_container
@@ -4260,6 +4265,7 @@ id linear
 id listMode
 id list_item
 id ll_delivery
+id ll_online_payment_cards
 id ll_payment
 id ll_pickup
 id ll_reserve
@@ -4447,9 +4453,10 @@ id radio
 id radio_group_payment
 id radio_group_type
 id ratio
-id rb_card
+id rb_card_on_delivery
 id rb_cash
 id rb_delivery
+id rb_online
 id rb_pickup
 id rb_reserve
 id rectangles

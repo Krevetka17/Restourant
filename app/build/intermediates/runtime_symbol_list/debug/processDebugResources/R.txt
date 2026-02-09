@@ -3454,6 +3454,9 @@ int drawable btn_radio_on_mtrl 0x7f070093
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f070094
 int drawable card_background 0x7f070095
 int drawable card_gradient 0x7f070096
+int drawable card_grayed_bg 0x7f070215
+int drawable card_normal_bg 0x7f070213
+int drawable card_selected_bg 0x7f070214
 int drawable circle_gray 0x7f070097
 int drawable circle_white 0x7f070098
 int drawable common_full_open_on_phone 0x7f070099
@@ -3913,6 +3916,7 @@ int id actions 0x7f090049
 int id activity_chooser_view_content 0x7f09004a
 int id add 0x7f09004b
 int id add_card_container 0x7f09004c
+int id add_card_container_fragment 0x7f09036d
 int id add_payment_method_card 0x7f09004d
 int id adjust_height 0x7f09004e
 int id adjust_width 0x7f09004f
@@ -4021,6 +4025,7 @@ int id card_multiline_widget_container 0x7f0900b5
 int id card_number_edit_text 0x7f0900b6
 int id card_number_input_container 0x7f0900b7
 int id card_number_text_input_layout 0x7f0900b8
+int id card_root 0x7f09036e
 int id carryVelocity 0x7f0900b9
 int id cartFragment 0x7f0900ba
 int id cart_container 0x7f0900bb
@@ -4259,6 +4264,7 @@ int id linear 0x7f0901a3
 int id listMode 0x7f0901a4
 int id list_item 0x7f0901a5
 int id ll_delivery 0x7f0901a6
+int id ll_online_payment_cards 0x7f09036a
 int id ll_payment 0x7f0901a7
 int id ll_pickup 0x7f0901a8
 int id ll_reserve 0x7f0901a9
@@ -4446,9 +4452,10 @@ int id radio 0x7f09025e
 int id radio_group_payment 0x7f09025f
 int id radio_group_type 0x7f090260
 int id ratio 0x7f090261
-int id rb_card 0x7f090262
+int id rb_card_on_delivery 0x7f09036b
 int id rb_cash 0x7f090263
 int id rb_delivery 0x7f090264
+int id rb_online 0x7f09036c
 int id rb_pickup 0x7f090265
 int id rb_reserve 0x7f090266
 int id rectangles 0x7f090267
